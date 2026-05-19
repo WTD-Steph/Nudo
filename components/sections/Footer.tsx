@@ -35,8 +35,8 @@ const COLS = [
 
 export function Footer() {
   return (
-    <footer className="bg-charcoal px-12 py-20 text-cream">
-      <div className="grid gap-12 border-b border-rule-charcoal pb-14 lg:grid-cols-[2fr_1fr_1fr_1fr]">
+    <footer className="bg-green px-12 py-20 text-cream">
+      <div className="grid gap-12 border-b border-rule-green pb-14 lg:grid-cols-[2fr_1fr_1fr_1fr]">
         <div>
           <div className="mb-5">
             <Wordmark height={44} variant="cream" />

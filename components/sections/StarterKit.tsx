@@ -10,14 +10,14 @@ const ITEMS = [
 export function StarterKit() {
   return (
     <section className="px-12 pb-20">
-      <div className="relative grid items-center gap-12 overflow-hidden rounded-[32px] bg-charcoal p-12 text-cream lg:grid-cols-[1fr_420px] lg:px-12 lg:py-14">
+      <div className="relative grid items-center gap-12 overflow-hidden rounded-[32px] bg-green p-12 text-cream lg:grid-cols-[1fr_420px] lg:px-12 lg:py-14">
         <div>
           <span className="mb-5 inline-flex items-center gap-2 self-start rounded-full bg-cream/10 px-3 py-1.5 text-xs font-semibold tracking-wide text-cream">
             ⚡ Most popular for first-timers
           </span>
           <h2 className="mb-4 text-balance text-[72px] font-bold leading-[0.95] tracking-[-0.035em]">
             The kit that gets you to{" "}
-            <em className="not-italic text-warm">your first good shot.</em>
+            <em className="not-italic text-mustard">your first good shot.</em>
           </h2>
           <p className="mb-7 max-w-[460px] text-[17px] leading-snug text-cream/80">
             Tamper, dosing cup, distributor, knock mat, microfibre cloth, and a
@@ -27,13 +27,13 @@ export function StarterKit() {
           <div className="mb-7 flex items-baseline gap-3.5">
             <span className="text-[42px] font-bold tracking-tight">$68</span>
             <span className="text-lg text-cream/40 line-through">$84</span>
-            <span className="rounded-full bg-warm px-3 py-1 text-xs font-bold text-charcoal">
+            <span className="rounded-full bg-mustard px-3 py-1 text-xs font-bold text-ink">
               Save 19%
             </span>
           </div>
           <a
             href="#"
-            className="inline-flex items-center gap-2.5 self-start rounded-full bg-cream px-6 py-4 text-[15px] font-bold text-charcoal no-underline"
+            className="inline-flex items-center gap-2.5 self-start rounded-full bg-cream px-6 py-4 text-[15px] font-bold text-ink no-underline"
           >
             Get the kit <span>→</span>
           </a>

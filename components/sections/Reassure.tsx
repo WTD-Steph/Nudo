@@ -28,9 +28,9 @@ export function Reassure() {
       <div className="mb-12 flex items-end justify-between">
         <h2 className="m-0 max-w-[720px] text-balance text-[56px] font-bold leading-[1.02] tracking-[-0.03em]">
           Three things you don&rsquo;t need to be{" "}
-          <em className="not-italic text-clay">intimidated</em> by.
+          <em className="not-italic text-rust">intimidated</em> by.
         </h2>
-        <div className="text-right font-mono text-[13px] uppercase tracking-wider text-mute">
+        <div className="text-right font-mono text-[13px] uppercase tracking-wider text-ink/40">
           No-gatekeep zone
           <br />
           Brewed since 2025
@@ -41,12 +41,12 @@ export function Reassure() {
           <div
             key={c.num}
             className={`flex min-h-[280px] flex-col justify-between gap-4 rounded-[22px] p-7 pb-8 ${
-              c.feat ? "bg-charcoal text-cream" : "bg-cream-2 text-charcoal"
+              c.feat ? "bg-green text-cream" : "bg-cream-paper text-ink"
             }`}
           >
             <div
               className={`text-[64px] font-bold leading-none tracking-[-0.04em] ${
-                c.feat ? "text-cream opacity-20" : "text-charcoal opacity-20"
+                c.feat ? "text-cream opacity-20" : "text-ink opacity-20"
               }`}
             >
               {c.num}
@@ -57,7 +57,7 @@ export function Reassure() {
               </h3>
               <p
                 className={`mt-2 text-[15px] leading-snug ${
-                  c.feat ? "text-cream/75" : "text-charcoal-soft"
+                  c.feat ? "text-cream/75" : "text-ink/70"
                 }`}
               >
                 {c.body}

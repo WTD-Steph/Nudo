@@ -3,27 +3,29 @@
 @tailwind utilities;
 
 :root {
-  --nl-charcoal: #212121;
-  --nl-charcoal-2: #2c2a26;
-  --nl-charcoal-soft: #383634;
-  --nl-cream: #f9f4de;
-  --nl-cream-2: #f3eed5;
-  --nl-cream-soft: #ece5c5;
-  --nl-warm: #e8c97a;
-  --nl-clay: #c46a3a;
-  --nl-mute: #76716a;
-  --nl-rule-cream: rgba(33, 33, 33, 0.12);
-  --nl-rule-charcoal: rgba(249, 244, 222, 0.14);
+  /* Brand palette — single source of truth */
+  --nl-green: #0d330e;
+  --nl-rust: #a3481a;
+  --nl-sand: #f1daae;
+  --nl-mustard: #e3ad55;
+  --nl-cream: #fdf8de;
+  --nl-cream-paper: #faf6e6;
+  --nl-ink: #1a1a1a;
+  --nl-ink-70: rgba(26, 26, 26, 0.7);
+  --nl-ink-40: rgba(26, 26, 26, 0.4);
+
+  --nl-rule-cream: rgba(26, 26, 26, 0.12);
+  --nl-rule-green: rgba(253, 248, 222, 0.14);
 }
 
 html,
 body {
   background: var(--nl-cream);
-  color: var(--nl-charcoal);
+  color: var(--nl-ink);
   font-feature-settings: "ss01" on, "ss02" on;
 }
 
-/* Headline highlight — yellow underline behind text */
+/* Headline highlight — mustard underline behind text */
 .hl-underline {
   position: relative;
   display: inline-block;
@@ -36,12 +38,12 @@ body {
   right: 0;
   bottom: 0.07em;
   height: 0.22em;
-  background: var(--nl-warm);
+  background: var(--nl-mustard);
   z-index: -1;
   border-radius: 0.1em;
 }
 
-/* Diagonal stripe pattern used in placeholder frames */
+/* Diagonal stripe pattern for placeholder frames (Sand on Cream) */
 .frame-stripes {
   position: relative;
   overflow: hidden;
@@ -53,14 +55,30 @@ body {
   background-image: repeating-linear-gradient(
     135deg,
     transparent 0 22px,
-    rgba(33, 33, 33, 0.05) 22px 23px
+    rgba(26, 26, 26, 0.05) 22px 23px
   );
 }
 
 /* Hero visual: warm radial gradient on cream */
 .hero-warm-glow {
   background:
-    radial-gradient(circle at 30% 30%, rgba(232, 201, 122, 0.7), transparent 50%),
-    radial-gradient(circle at 70% 70%, rgba(196, 106, 58, 0.3), transparent 55%),
-    var(--nl-cream-soft);
+    radial-gradient(circle at 30% 30%, rgba(227, 173, 85, 0.55), transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(163, 72, 26, 0.25), transparent 55%),
+    var(--nl-cream-paper);
+}
+
+/* Focus ring — green, generous offset */
+*:focus-visible {
+  outline: 2px solid var(--nl-green);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

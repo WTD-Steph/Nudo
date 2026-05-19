@@ -107,9 +107,9 @@ const FILTERS: { key: string; label: string }[] = [
 ];
 
 function tagClasses(kind: Product["tagKind"]) {
-  if (kind === "new") return "bg-warm text-charcoal";
-  if (kind === "kit") return "bg-charcoal text-cream";
-  return "bg-cream text-charcoal";
+  if (kind === "new") return "bg-mustard text-ink";
+  if (kind === "kit") return "bg-green text-cream";
+  return "bg-cream text-ink";
 }
 
 export function Catalog() {
@@ -121,7 +121,7 @@ export function Catalog() {
     <section className="border-t border-rule-cream px-12 py-20">
       <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
         <h2 className="m-0 text-[64px] font-bold leading-none tracking-[-0.035em]">
-          Shop <em className="not-italic text-clay">the basics.</em>
+          Shop <em className="not-italic text-rust">the basics.</em>
         </h2>
         <div className="flex flex-wrap items-end gap-2">
           {FILTERS.map((f) => (
@@ -130,8 +130,8 @@ export function Catalog() {
               onClick={() => setActive(f.key)}
               className={`rounded-full border px-3.5 py-2 text-[13px] font-medium transition ${
                 active === f.key
-                  ? "border-charcoal bg-charcoal text-cream"
-                  : "border-rule-cream bg-transparent text-charcoal-soft hover:border-charcoal"
+                  ? "border-green bg-green text-cream"
+                  : "border-rule-cream bg-transparent text-ink/70 hover:border-green"
               }`}
             >
               {f.label}
@@ -143,9 +143,9 @@ export function Catalog() {
         {visible.map((p) => (
           <div
             key={p.slug}
-            className="group flex cursor-pointer flex-col rounded-[22px] bg-cream-2 p-3.5 transition hover:-translate-y-[3px]"
+            className="group flex cursor-pointer flex-col rounded-[22px] bg-cream-paper p-3.5 transition hover:-translate-y-[3px]"
           >
-            <div className="relative mb-4 aspect-square overflow-hidden rounded-[14px] bg-cream-soft">
+            <div className="relative mb-4 aspect-square overflow-hidden rounded-[14px] bg-sand">
               <Image
                 src={p.image}
                 alt={p.name}
@@ -165,17 +165,17 @@ export function Catalog() {
               <div className="text-[19px] font-bold tracking-tight">
                 {p.name}
               </div>
-              <div className="min-h-[2.8em] text-[14px] leading-snug text-charcoal-soft">
+              <div className="min-h-[2.8em] text-[14px] leading-snug text-ink/70">
                 {p.desc}
               </div>
               <div className="flex items-center justify-between pt-2">
                 <div className="text-[17px] font-bold">
                   {p.was && (
-                    <s className="mr-1.5 font-normal text-mute">{p.was}</s>
+                    <s className="mr-1.5 font-normal text-ink/40">{p.was}</s>
                   )}
                   {p.price}
                 </div>
-                <button className="cursor-pointer rounded-full border-none bg-charcoal px-3.5 py-2 text-xs font-semibold text-cream">
+                <button className="cursor-pointer rounded-full border-none bg-green px-3.5 py-2 text-xs font-semibold text-cream">
                   Add to cart
                 </button>
               </div>

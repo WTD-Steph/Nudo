@@ -7,10 +7,10 @@ const ITEMS = [
 
 export function TrustBand() {
   return (
-    <div className="mx-12 flex flex-wrap items-center gap-8 border-t border-rule-cream pt-7 text-[13px] font-medium text-charcoal-soft">
+    <div className="mx-12 flex flex-wrap items-center gap-8 border-t border-rule-cream pt-7 text-[13px] font-medium text-ink/70">
       {ITEMS.map((label) => (
         <span key={label} className="inline-flex items-center gap-2">
-          <span className="h-1.5 w-1.5 rounded-full bg-clay" />
+          <span className="h-1.5 w-1.5 rounded-full bg-rust" />
           {label}
         </span>
       ))}
