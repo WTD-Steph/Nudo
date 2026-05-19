@@ -25,7 +25,11 @@ const notoJp = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "Nudo Lab — For every first brews",
+  metadataBase: new URL("https://nudolab.vercel.app"),
+  title: {
+    default: "Nudo Lab — For every first brews",
+    template: "%s · Nudo Lab",
+  },
   description:
     "Friendly brewing tools for beginners who want to learn, experiment, and enjoy coffee without the pressure. Because great coffee doesn't have to be complicated.",
   openGraph: {
@@ -33,7 +37,16 @@ export const metadata: Metadata = {
     description:
       "Friendly brewing tools for beginners. Espresso, pour-over, and starter kits without the gatekeeping.",
     type: "website",
+    images: ["/og?title=For%20every%20first%20brews."],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nudo Lab — For every first brews",
+    description:
+      "Friendly brewing tools for beginners. Espresso, pour-over, and starter kits without the gatekeeping.",
+    images: ["/og?title=For%20every%20first%20brews."],
+  },
+  themeColor: "#0D330E",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
