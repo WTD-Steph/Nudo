@@ -9,6 +9,8 @@ import {
   DripBagSilhouette,
   SensoryCupSilhouette,
 } from "@/components/Silhouettes";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbLd, kitLd } from "@/lib/seo";
 import { KITS, getKit } from "@/lib/kits";
 import { getProduct } from "@/lib/products";
 import { ROUTES } from "@/lib/links";
@@ -44,8 +46,18 @@ export default function KitDetail({ params }: { params: { slug: string } }) {
 
   return (
     <>
+      <JsonLd
+        data={[
+          kitLd(kit),
+          breadcrumbLd([
+            { name: "Home", href: ROUTES.home },
+            { name: "Kits", href: ROUTES.kits },
+            { name: kit.name, href: ROUTES.kit(kit.slug) },
+          ]),
+        ]}
+      />
       <Nav />
-      <main className="bg-cream">
+      <main id="main-content" className="bg-cream">
         {/* Breadcrumbs */}
         <nav
           aria-label="Breadcrumb"

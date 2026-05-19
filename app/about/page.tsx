@@ -14,7 +14,7 @@ export default function AboutPage() {
   return (
     <>
       <Nav />
-      <main className="bg-cream">
+      <main id="main-content" className="bg-cream">
         {/* Hero */}
         <section className="px-12 pb-12 pt-16">
           <div className="mx-auto max-w-[920px]">

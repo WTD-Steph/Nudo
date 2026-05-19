@@ -15,7 +15,7 @@ export default function HomePage() {
     <>
       <AnnouncementBar />
       <Nav />
-      <main className="bg-cream">
+      <main id="main-content" className="bg-cream">
         <Hero />
         <TrustBand />
         <Reassure />

@@ -24,7 +24,7 @@ export function JournalLayout({ post, children }: Props) {
   return (
     <>
       <Nav />
-      <main className="bg-cream">
+      <main id="main-content" className="bg-cream">
         <header className="px-12 pt-16">
           <div className="mx-auto max-w-[760px]">
             <nav aria-label="Breadcrumb" className="text-[13px] text-ink/60">

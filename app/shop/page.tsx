@@ -1,6 +1,8 @@
 import { Nav } from "@/components/sections/Nav";
 import { Footer } from "@/components/sections/Footer";
 import { ProductGrid } from "@/components/ProductGrid";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbLd, itemListLd } from "@/lib/seo";
 import {
   CATEGORIES,
   getProductsByCategory,
@@ -44,8 +46,17 @@ export default function ShopIndex({
 
   return (
     <>
+      <JsonLd
+        data={[
+          itemListLd(visible),
+          breadcrumbLd([
+            { name: "Home", href: ROUTES.home },
+            { name: "Shop", href: ROUTES.shop },
+          ]),
+        ]}
+      />
       <Nav />
-      <main className="bg-cream">
+      <main id="main-content" className="bg-cream">
         <section className="px-12 pt-16">
           <div className="mx-auto max-w-[1280px]">
             <div className="font-mono text-[12px] uppercase tracking-widest text-rust">

@@ -1,7 +1,10 @@
 import { GuideLayout } from "@/components/GuideLayout";
 import { Term } from "@/components/Term";
 import { ProductChip } from "@/components/ProductChip";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbLd, howToLd } from "@/lib/seo";
 import { getGuide, getRelatedGuides } from "@/lib/guides";
+import { ROUTES } from "@/lib/links";
 
 const SLUG = "first-brew";
 
@@ -16,7 +19,44 @@ export default function FirstBrewGuide() {
   const related = getRelatedGuides(SLUG);
 
   return (
-    <GuideLayout guide={guide} related={related}>
+    <>
+      <JsonLd
+        data={[
+          howToLd({
+            name: guide.title,
+            description: guide.dek,
+            totalTime: "PT6M",
+            steps: [
+              {
+                name: "Weigh it, don't guess it",
+                text:
+                  "Use a 0.1 g scale to weigh your dose and your yield. Same beans, same grind, same weight in — consistent coffee out.",
+              },
+              {
+                name: "Distribute, then tamp (espresso) / bloom, then pour (filter)",
+                text:
+                  "For espresso, WDT the bed before tamping. For pour-over, bloom with twice the weight of your dose for 30 seconds, then pour slowly in spirals.",
+              },
+              {
+                name: "Taste before you tweak",
+                text:
+                  "Pour into a deliberate cup and sip slowly. Sour means under-extracted; bitter means over-extracted. Change one thing next time.",
+              },
+              {
+                name: "Brew it again tomorrow",
+                text:
+                  "Coffee is a practice, not a performance. Make the same brew, the same way, for a week. Notice what drifts.",
+              },
+            ],
+          }),
+          breadcrumbLd([
+            { name: "Home", href: ROUTES.home },
+            { name: "Guides", href: ROUTES.guides },
+            { name: guide.title, href: ROUTES.guide(guide.slug) },
+          ]),
+        ]}
+      />
+      <GuideLayout guide={guide} related={related}>
       <p>
         Your first cup at home doesn&rsquo;t have to be perfect. It just has
         to be a little better than yesterday&rsquo;s. This is the shortest
@@ -166,5 +206,6 @@ export default function FirstBrewGuide() {
         Ok, you got this.
       </p>
     </GuideLayout>
+    </>
   );
 }

@@ -14,7 +14,7 @@ export function GuideLayout({ guide, related = [], children }: Props) {
   return (
     <>
       <Nav />
-      <main className="bg-cream">
+      <main id="main-content" className="bg-cream">
         {/* Header */}
         <header className="px-12 pt-16">
           <div className="mx-auto max-w-[760px]">

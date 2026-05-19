@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Urbanist, JetBrains_Mono, Noto_Sans_JP } from "next/font/google";
+import { JsonLd } from "@/components/JsonLd";
+import { organizationLd, websiteLd } from "@/lib/seo";
 import "./globals.css";
 
 const urbanist = Urbanist({
@@ -58,7 +60,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="en"
       className={`${urbanist.variable} ${jetbrains.variable} ${notoJp.variable}`}
     >
-      <body className="font-sans antialiased">{children}</body>
+      <head>
+        <JsonLd data={[organizationLd(), websiteLd()]} />
+      </head>
+      <body className="font-sans antialiased">
+        <a
+          href="#main-content"
+          className="sr-only absolute left-2 top-2 z-50 rounded-md bg-green px-4 py-2 text-cream focus:not-sr-only focus:outline-none focus:ring-2 focus:ring-mustard focus:ring-offset-2"
+        >
+          Skip to content
+        </a>
+        {children}
+      </body>
     </html>
   );
 }

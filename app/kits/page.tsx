@@ -59,7 +59,7 @@ export default function KitsPage() {
   return (
     <>
       <Nav />
-      <main className="bg-cream">
+      <main id="main-content" className="bg-cream">
         <header className="px-12 pt-16">
           <div className="mx-auto max-w-[920px]">
             <div className="font-mono text-[12px] uppercase tracking-widest text-rust">

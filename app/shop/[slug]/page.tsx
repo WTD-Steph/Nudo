@@ -10,6 +10,8 @@ import {
   DripBagSilhouette,
   SensoryCupSilhouette,
 } from "@/components/Silhouettes";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbLd, productLd } from "@/lib/seo";
 import { getProduct, getProducts, type Product } from "@/lib/products";
 import { ROUTES } from "@/lib/links";
 
@@ -76,8 +78,18 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
   return (
     <>
+      <JsonLd
+        data={[
+          productLd(p),
+          breadcrumbLd([
+            { name: "Home", href: ROUTES.home },
+            { name: "Shop", href: ROUTES.shop },
+            { name: p.name, href: ROUTES.product(p.slug) },
+          ]),
+        ]}
+      />
       <Nav />
-      <main className="bg-cream">
+      <main id="main-content" className="bg-cream">
         {/* Breadcrumbs */}
         <nav
           aria-label="Breadcrumb"
