@@ -37,7 +37,7 @@ export function MakkerComparison() {
   return (
     <div className="overflow-hidden rounded-[22px] border border-rule-cream">
       <div className="grid grid-cols-[1.2fr_1fr_1fr]">
-        <div className="bg-cream-paper p-5 font-mono text-[11px] uppercase tracking-widest text-ink/50" />
+        <div className="bg-cream-paper p-5 font-mono text-[11px] uppercase tracking-widest text-ink/65" />
         <div className="bg-cream-paper p-5 text-[15px] font-bold">Nudo Lab</div>
         <div className="bg-cream-paper p-5 text-[15px] font-bold text-green">
           Makker
@@ -46,7 +46,7 @@ export function MakkerComparison() {
           const bg = i % 2 ? "bg-cream" : "bg-cream-paper/40";
           return (
             <Fragment key={r.label}>
-              <div className={`p-5 text-[13px] font-semibold text-ink/60 ${bg}`}>
+              <div className={`p-5 text-[13px] font-semibold text-ink/75 ${bg}`}>
                 {r.label}
               </div>
               <div className={`p-5 text-[15px] leading-snug ${bg}`}>

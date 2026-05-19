@@ -20,7 +20,7 @@ export function Term({ slug, children }: Props) {
   return (
     <Link
       href={`${ROUTES.glossary}#${slug}`}
-      className="group relative inline-block whitespace-nowrap border-b border-dotted border-rust/60 text-rust"
+      className="group relative inline-block whitespace-nowrap border-b border-dotted border-rust text-ink"
     >
       {children ?? entry.term}
       <span

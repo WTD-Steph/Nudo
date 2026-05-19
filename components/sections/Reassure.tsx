@@ -33,7 +33,7 @@ export function Reassure() {
           Three things you don&rsquo;t need to be{" "}
           <em className="not-italic text-rust">intimidated</em> by.
         </h2>
-        <div className="text-right font-mono text-[13px] uppercase tracking-wider text-ink/40">
+        <div className="text-right font-mono text-[13px] uppercase tracking-wider text-ink/80">
           No-gatekeep zone
           <br />
           Brewed since 2025
@@ -48,8 +48,9 @@ export function Reassure() {
             }`}
           >
             <div
+              aria-hidden="true"
               className={`text-[64px] font-bold leading-none tracking-[-0.04em] ${
-                c.feat ? "text-cream opacity-20" : "text-ink opacity-20"
+                c.feat ? "text-cream/50" : "text-ink/50"
               }`}
             >
               {c.num}

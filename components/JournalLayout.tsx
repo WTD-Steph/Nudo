@@ -27,7 +27,7 @@ export function JournalLayout({ post, children }: Props) {
       <main id="main-content" className="bg-cream">
         <header className="px-12 pt-16">
           <div className="mx-auto max-w-[760px]">
-            <nav aria-label="Breadcrumb" className="text-[13px] text-ink/60">
+            <nav aria-label="Breadcrumb" className="text-[13px] text-ink/75">
               <Link href={ROUTES.home}>Home</Link>
               <span className="mx-2">/</span>
               <Link href={ROUTES.journal}>Journal</Link>
@@ -37,9 +37,9 @@ export function JournalLayout({ post, children }: Props) {
             <div className="mt-8 flex flex-wrap items-center gap-3 font-mono text-[11px] uppercase tracking-widest text-rust">
               <span>{TONE_LABEL[post.tone]}</span>
               <span className="text-ink/30">·</span>
-              <span className="text-ink/50">{fmtDate(post.publishedAt)}</span>
+              <span className="text-ink/65">{fmtDate(post.publishedAt)}</span>
               <span className="text-ink/30">·</span>
-              <span className="text-ink/50">
+              <span className="text-ink/65">
                 {post.readingTimeMin} min read
               </span>
             </div>
@@ -49,7 +49,7 @@ export function JournalLayout({ post, children }: Props) {
             <p className="mt-4 max-w-[640px] text-balance text-[clamp(17px,2vw,20px)] leading-snug text-ink/70">
               {post.dek}
             </p>
-            <p className="mt-5 text-[14px] text-ink/50">By {post.author}.</p>
+            <p className="mt-5 text-[14px] text-ink/65">By {post.author}.</p>
           </div>
         </header>
 

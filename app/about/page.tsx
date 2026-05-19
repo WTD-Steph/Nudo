@@ -74,7 +74,7 @@ export default function AboutPage() {
               So we changed it. We&rsquo;d rather have a name you remember
               than one we have to keep explaining.
             </p>
-            <p className="mt-4 text-[15px] leading-relaxed text-ink/60">
+            <p className="mt-4 text-[15px] leading-relaxed text-ink/75">
               In Japanese:{" "}
               <span lang="ja" className="font-ja text-ink/80">
                 ヌードラボ
@@ -131,7 +131,7 @@ export default function AboutPage() {
                 <h3 className="m-0 mt-2 text-[clamp(28px,3vw,40px)] font-bold leading-tight tracking-tight">
                   When you&rsquo;ve outgrown Nudo.
                 </h3>
-                <p className="mt-3 text-[15px] text-cream/70">
+                <p className="mt-3 text-[15px] text-cream/80">
                   Same team, same standards of honesty. Different shelf.
                 </p>
               </div>
@@ -152,7 +152,7 @@ export default function AboutPage() {
               <p className="mt-2 text-[16px] leading-snug">
                 Brewed and packed somewhere with bad parking.
                 <br />
-                <span className="text-ink/60">Indonesia · 06:40 local.</span>
+                <span className="text-ink/75">Indonesia · 06:40 local.</span>
               </p>
             </div>
             <div>
@@ -165,7 +165,7 @@ export default function AboutPage() {
               >
                 {CONTACT_EMAIL}
               </a>
-              <p className="mt-1 text-[14px] text-ink/60">
+              <p className="mt-1 text-[14px] text-ink/75">
                 A real person replies within a day.
               </p>
             </div>
@@ -181,7 +181,7 @@ export default function AboutPage() {
               >
                 @nudolab
               </a>
-              <p className="mt-1 text-[14px] text-ink/60">
+              <p className="mt-1 text-[14px] text-ink/75">
                 First brews, behind the scenes, the occasional bad shot.
               </p>
             </div>
@@ -193,7 +193,7 @@ export default function AboutPage() {
           <div className="mx-auto flex max-w-[920px] flex-col items-center gap-6 text-center">
             <DOMark size={56} variant="black" className="opacity-30" />
             <p className="m-0 text-[15px] font-semibold">— The Nudo team</p>
-            <p className="m-0 text-[14px] text-ink/60" lang="ja">
+            <p className="m-0 text-[14px] text-ink/75" lang="ja">
               ヌードラボ · 初心者向け
             </p>
           </div>

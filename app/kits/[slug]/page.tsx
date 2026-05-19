@@ -61,7 +61,7 @@ export default function KitDetail({ params }: { params: { slug: string } }) {
         {/* Breadcrumbs */}
         <nav
           aria-label="Breadcrumb"
-          className="mx-auto max-w-[1280px] px-12 pt-8 text-[13px] text-ink/60"
+          className="mx-auto max-w-[1280px] px-12 pt-8 text-[13px] text-ink/75"
         >
           <Link href={ROUTES.home}>Home</Link>
           <span className="mx-2">/</span>
@@ -122,7 +122,7 @@ export default function KitDetail({ params }: { params: { slug: string } }) {
 
             <div className="mt-6 flex items-baseline gap-3">
               <span className="text-[34px] font-bold">{kit.price}</span>
-              <span className="text-[16px] text-ink/40 line-through">
+              <span className="text-[16px] text-ink/60 line-through">
                 {kit.alaCarte}
               </span>
               <span className="rounded-full bg-mustard px-2.5 py-1 text-[12px] font-semibold text-ink">
@@ -196,11 +196,11 @@ export default function KitDetail({ params }: { params: { slug: string } }) {
                     </div>
                     <div className="flex flex-1 flex-col">
                       <span className="text-[17px] font-bold">{p.name}</span>
-                      <span className="text-[13px] text-ink/60">
+                      <span className="text-[13px] text-ink/75">
                         {p.desc}
                       </span>
                     </div>
-                    <span className="font-mono text-[14px] text-ink/60">
+                    <span className="font-mono text-[14px] text-ink/75">
                       {p.price}
                     </span>
                     <span className="text-[13px] font-semibold text-green group-hover:underline">
@@ -241,7 +241,7 @@ export default function KitDetail({ params }: { params: { slug: string } }) {
         <section className="border-t border-rule-cream px-12 py-16">
           <div className="mx-auto max-w-[1280px]">
             <div className="rounded-[22px] bg-sand p-10 lg:p-14">
-              <div className="mb-3 font-mono text-[11px] uppercase tracking-widest text-rust">
+              <div className="mb-3 font-mono text-[12px] font-semibold uppercase tracking-widest text-green">
                 What this kit won&apos;t do
               </div>
               <p className="m-0 max-w-[860px] text-balance text-[clamp(22px,2.4vw,32px)] font-bold leading-snug tracking-tight">

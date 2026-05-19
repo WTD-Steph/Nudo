@@ -26,7 +26,7 @@ export default function TrackOrderPage() {
       <main id="main-content" className="bg-cream">
         <section className="px-12 pt-16">
           <div className="mx-auto max-w-[760px]">
-            <nav aria-label="Breadcrumb" className="text-[13px] text-ink/60">
+            <nav aria-label="Breadcrumb" className="text-[13px] text-ink/75">
               <Link href={ROUTES.home}>Home</Link>
               <span className="mx-2">/</span>
               <span className="text-ink">Track an order</span>

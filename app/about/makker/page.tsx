@@ -65,7 +65,7 @@ export default function MakkerBridgePage() {
         {/* Signals you're ready */}
         <section className="px-12 py-12">
           <div className="mx-auto max-w-[920px] rounded-[22px] bg-sand p-10">
-            <div className="font-mono text-[11px] uppercase tracking-widest text-rust">
+            <div className="font-mono text-[12px] font-semibold uppercase tracking-widest text-green">
               Honest signals
             </div>
             <h3 className="m-0 mt-3 text-[clamp(24px,2.6vw,36px)] font-bold leading-tight tracking-tight">
@@ -84,7 +84,7 @@ export default function MakkerBridgePage() {
                 </li>
               ))}
             </ul>
-            <p className="mt-6 text-[14px] italic leading-snug text-ink/60">
+            <p className="mt-6 text-[14px] italic leading-snug text-ink/75">
               Still here at four months? Stay. We&rsquo;re glad to have you.
             </p>
           </div>
@@ -94,7 +94,7 @@ export default function MakkerBridgePage() {
         <section className="px-12 py-16">
           <div className="mx-auto max-w-[920px]">
             <div className="rounded-[22px] bg-green p-10 text-cream">
-              <p className="m-0 text-[15px] leading-snug text-cream/70">
+              <p className="m-0 text-[15px] leading-snug text-cream/80">
                 Same team. Same standards of honesty. Different shelf.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
@@ -115,7 +115,7 @@ export default function MakkerBridgePage() {
                 </Link>
               </div>
               {MAKKER_URL === "#" && (
-                <p className="mt-4 text-[12px] text-cream/50">
+                <p className="mt-4 text-[12px] text-cream/65">
                   Makker&rsquo;s site is still under wraps. We&rsquo;ll link it
                   here the moment it lands.
                 </p>

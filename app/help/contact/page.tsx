@@ -47,7 +47,7 @@ export default function ContactPage() {
       <main id="main-content" className="bg-cream">
         <section className="px-12 pt-16">
           <div className="mx-auto max-w-[920px]">
-            <nav aria-label="Breadcrumb" className="text-[13px] text-ink/60">
+            <nav aria-label="Breadcrumb" className="text-[13px] text-ink/75">
               <Link href={ROUTES.home}>Home</Link>
               <span className="mx-2">/</span>
               <span className="text-ink">Contact</span>
@@ -77,7 +77,7 @@ export default function ContactPage() {
                 Email
               </div>
               <div className="mt-2 text-[20px] font-bold">{CONTACT_EMAIL}</div>
-              <p className="mt-2 text-[14px] text-ink/60">
+              <p className="mt-2 text-[14px] text-ink/75">
                 The fastest path. A real person replies within a day.
               </p>
             </a>
@@ -87,13 +87,13 @@ export default function ContactPage() {
               rel="noreferrer"
               className="group rounded-[22px] bg-sand p-6 transition hover:-translate-y-0.5"
             >
-              <div className="font-mono text-[11px] uppercase tracking-widest text-rust">
+              <div className="font-mono text-[12px] font-semibold uppercase tracking-widest text-green">
                 WhatsApp
               </div>
               <div className="mt-2 text-[20px] font-bold">
                 Message us on WhatsApp
               </div>
-              <p className="mt-2 text-[14px] text-ink/60">
+              <p className="mt-2 text-[14px] text-ink/75">
                 Faster for short questions. We&rsquo;re online 9–6 local
                 time.
               </p>
@@ -117,29 +117,29 @@ export default function ContactPage() {
             <h2 className="m-0 mb-8 text-[clamp(24px,2.6vw,36px)] font-bold leading-tight tracking-tight">
               Things people ask first.
             </h2>
-            <dl className="grid gap-3">
+            <div className="grid gap-3">
               {FAQ.map((q) => (
                 <details
                   key={q.question}
                   className="group rounded-[14px] bg-cream-paper p-6 open:bg-sand"
                 >
-                  <summary className="cursor-pointer text-[17px] font-semibold marker:hidden list-none">
+                  <summary className="cursor-pointer list-none text-[17px] font-semibold marker:hidden">
                     <div className="flex items-center justify-between">
                       <span>{q.question}</span>
                       <span
                         aria-hidden
-                        className="ml-4 inline-block transition group-open:rotate-45 text-rust"
+                        className="ml-4 inline-block text-rust transition group-open:rotate-45"
                       >
                         +
                       </span>
                     </div>
                   </summary>
-                  <dd className="mt-3 text-[15px] leading-snug text-ink/80">
+                  <p className="mt-3 text-[15px] leading-snug text-ink/80">
                     {q.answer}
-                  </dd>
+                  </p>
                 </details>
               ))}
-            </dl>
+            </div>
           </div>
         </section>
       </main>

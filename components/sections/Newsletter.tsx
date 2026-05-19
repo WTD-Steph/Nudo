@@ -85,7 +85,7 @@ export function Newsletter() {
                 placeholder="your@email.com"
                 aria-invalid={status === "error"}
                 disabled={status === "submitting"}
-                className="flex-1 border-0 bg-transparent px-4 py-3 text-[15px] text-ink outline-none placeholder:text-ink/40 disabled:opacity-50"
+                className="flex-1 border-0 bg-transparent px-4 py-3 text-[15px] text-ink outline-none placeholder:text-ink/60 disabled:opacity-50"
               />
               <button
                 type="submit"

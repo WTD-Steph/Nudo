@@ -28,7 +28,7 @@ export function StarterKit() {
           </p>
           <div className="mb-7 flex items-baseline gap-3.5">
             <span className="text-[42px] font-bold tracking-tight">$68</span>
-            <span className="text-lg text-cream/40 line-through">$84</span>
+            <span className="text-lg text-cream/60 line-through">$84</span>
             <span className="rounded-full bg-mustard px-3 py-1 text-xs font-bold text-ink">
               Save 19%
             </span>
@@ -56,7 +56,7 @@ export function StarterKit() {
                 />
               </div>
               <div className="text-[13px] font-semibold">{it.nm}</div>
-              <div className="font-mono text-[11px] tracking-wider text-cream/50">
+              <div className="font-mono text-[11px] tracking-wider text-cream/65">
                 {it.meta}
               </div>
             </div>

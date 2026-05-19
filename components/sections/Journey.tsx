@@ -51,7 +51,7 @@ export function Journey() {
             <p className="m-0 text-[15px] leading-snug text-ink/70">
               {s.body}
             </p>
-            <div className="mt-auto flex items-start gap-2 border-t border-dashed border-rule-cream pt-4 text-[13px] text-ink/40">
+            <div className="mt-auto flex items-start gap-2 border-t border-dashed border-rule-cream pt-4 text-[13px] text-ink/80">
               <b className="font-bold text-rust">Tip ·</b>
               <span>{s.tip}</span>
             </div>

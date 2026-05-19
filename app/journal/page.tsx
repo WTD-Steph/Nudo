@@ -58,9 +58,9 @@ export default function JournalPage() {
                     <div className="flex flex-wrap items-center gap-3 font-mono text-[11px] uppercase tracking-widest text-rust">
                       <span>{TONE_LABEL[p.tone]}</span>
                       <span className="text-ink/30">·</span>
-                      <span className="text-ink/50">{fmtDate(p.publishedAt)}</span>
+                      <span className="text-ink/65">{fmtDate(p.publishedAt)}</span>
                       <span className="text-ink/30">·</span>
-                      <span className="text-ink/50">
+                      <span className="text-ink/65">
                         {p.readingTimeMin} min read
                       </span>
                     </div>

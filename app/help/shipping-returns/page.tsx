@@ -51,7 +51,7 @@ export default function ShippingPage() {
       <main id="main-content" className="bg-cream">
         <section className="px-12 pt-16">
           <div className="mx-auto max-w-[920px]">
-            <nav aria-label="Breadcrumb" className="text-[13px] text-ink/60">
+            <nav aria-label="Breadcrumb" className="text-[13px] text-ink/75">
               <Link href={ROUTES.home}>Home</Link>
               <span className="mx-2">/</span>
               <span className="text-ink">Shipping & Returns</span>
@@ -91,7 +91,7 @@ export default function ShippingPage() {
               </p>
             </div>
             <div className="rounded-[22px] bg-sand p-6">
-              <div className="font-mono text-[11px] uppercase tracking-widest text-rust">
+              <div className="font-mono text-[12px] font-semibold uppercase tracking-widest text-green">
                 Broken in transit
               </div>
               <p className="mt-2 text-[16px] leading-snug">
@@ -99,7 +99,7 @@ export default function ShippingPage() {
               </p>
             </div>
             <div className="rounded-[22px] bg-sand p-6">
-              <div className="font-mono text-[11px] uppercase tracking-widest text-rust">
+              <div className="font-mono text-[12px] font-semibold uppercase tracking-widest text-green">
                 Real humans
               </div>
               <p className="mt-2 text-[16px] leading-snug">
@@ -123,7 +123,7 @@ export default function ShippingPage() {
             </h2>
             <div className="overflow-hidden rounded-[14px] border border-rule-cream">
               <table className="w-full text-left">
-                <thead className="bg-cream-paper text-[12px] uppercase tracking-widest text-ink/60">
+                <thead className="bg-cream-paper text-[12px] uppercase tracking-widest text-ink/75">
                   <tr>
                     <th className="p-4 font-semibold">Region</th>
                     <th className="p-4 font-semibold">Time</th>
@@ -154,7 +154,7 @@ export default function ShippingPage() {
                 </tbody>
               </table>
             </div>
-            <p className="mt-3 text-[13px] text-ink/50">
+            <p className="mt-3 text-[13px] text-ink/65">
               Free over $40 in all regions. Duties &amp; taxes paid by the
               recipient for international shipments.
             </p>
@@ -167,13 +167,13 @@ export default function ShippingPage() {
             <h2 className="m-0 mb-6 text-[clamp(24px,2.6vw,36px)] font-bold leading-tight tracking-tight">
               Frequently asked.
             </h2>
-            <dl className="grid gap-3">
+            <div className="grid gap-3">
               {FAQ.map((q) => (
                 <details
                   key={q.question}
                   className="group rounded-[14px] bg-cream-paper p-6 open:bg-sand"
                 >
-                  <summary className="cursor-pointer text-[17px] font-semibold marker:hidden list-none">
+                  <summary className="cursor-pointer list-none text-[17px] font-semibold marker:hidden">
                     <div className="flex items-center justify-between">
                       <span>{q.question}</span>
                       <span
@@ -184,12 +184,12 @@ export default function ShippingPage() {
                       </span>
                     </div>
                   </summary>
-                  <dd className="mt-3 text-[15px] leading-snug text-ink/80">
+                  <p className="mt-3 text-[15px] leading-snug text-ink/80">
                     {q.answer}
-                  </dd>
+                  </p>
                 </details>
               ))}
-            </dl>
+            </div>
           </div>
         </section>
       </main>

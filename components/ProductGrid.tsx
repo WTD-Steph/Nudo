@@ -58,7 +58,7 @@ export function ProductGrid({ products }: Props) {
             <div className="flex items-center justify-between pt-2">
               <div className="text-[17px] font-bold">
                 {p.was && (
-                  <s className="mr-1.5 font-normal text-ink/40">{p.was}</s>
+                  <s className="mr-1.5 font-normal text-ink/60">{p.was}</s>
                 )}
                 {p.price}
               </div>

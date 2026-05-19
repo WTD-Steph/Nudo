@@ -8,7 +8,7 @@ export function Hero() {
       <div>
         <div className="mb-7 inline-flex items-center gap-3 self-start rounded-full bg-sand px-3.5 py-1.5 text-[13px] font-semibold">
           <span className="text-base">👋</span> Hi — first time here?
-          <span lang="ja" className="border-l border-green/15 pl-3 font-mono text-[11px] font-normal text-ink/55">
+          <span lang="ja" className="border-l border-green/20 pl-3 font-mono text-[11px] font-medium text-ink/75">
             ヌードラボ · 初心者向け
           </span>
         </div>

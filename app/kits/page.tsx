@@ -109,7 +109,7 @@ export default function KitsPage() {
 
                 <div className="mt-auto flex items-baseline gap-3 pt-6">
                   <span className="text-[24px] font-bold">{kit.price}</span>
-                  <span className="text-[14px] text-ink/40 line-through">
+                  <span className="text-[14px] text-ink/60 line-through">
                     {kit.alaCarte}
                   </span>
                   <span className="rounded-full bg-mustard px-2 py-0.5 text-[11px] font-semibold text-ink">

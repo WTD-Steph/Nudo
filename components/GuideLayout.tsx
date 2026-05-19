@@ -20,7 +20,7 @@ export function GuideLayout({ guide, related = [], children }: Props) {
           <div className="mx-auto max-w-[760px]">
             <nav
               aria-label="Breadcrumb"
-              className="text-[13px] text-ink/60"
+              className="text-[13px] text-ink/75"
             >
               <Link href={ROUTES.home}>Home</Link>
               <span className="mx-2">/</span>

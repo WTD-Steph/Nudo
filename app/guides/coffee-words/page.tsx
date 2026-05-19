@@ -30,7 +30,7 @@ export default function GlossaryPage() {
       <main id="main-content" className="bg-cream">
         <header className="px-12 pt-16">
           <div className="mx-auto max-w-[920px]">
-            <nav aria-label="Breadcrumb" className="text-[13px] text-ink/60">
+            <nav aria-label="Breadcrumb" className="text-[13px] text-ink/75">
               <Link href={ROUTES.home}>Home</Link>
               <span className="mx-2">/</span>
               <Link href={ROUTES.guides}>Guides</Link>
@@ -68,7 +68,7 @@ export default function GlossaryPage() {
               <a
                 key={l}
                 href={`#letter-${l}`}
-                className="rounded-md px-2 py-1 font-mono font-semibold text-ink/60 hover:bg-sand hover:text-ink"
+                className="rounded-md px-2 py-1 font-mono font-semibold text-ink/75 hover:bg-sand hover:text-ink"
               >
                 {l}
               </a>
@@ -98,13 +98,13 @@ export default function GlossaryPage() {
                         {e.short}
                       </dd>
                       {e.long && (
-                        <dd className="mt-2 text-[14px] leading-snug text-ink/60">
+                        <dd className="mt-2 text-[14px] leading-snug text-ink/75">
                           {e.long}
                         </dd>
                       )}
                       {e.see && e.see.length > 0 && (
                         <dd className="mt-3 flex flex-wrap gap-2 text-[12px]">
-                          <span className="text-ink/40">See also:</span>
+                          <span className="text-ink/60">See also:</span>
                           {e.see.map((s) => (
                             <a
                               key={s}

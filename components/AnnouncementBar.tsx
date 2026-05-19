@@ -36,7 +36,7 @@ export function AnnouncementBar() {
             } catch {}
             setDismissed(true);
           }}
-          className="rounded-full px-2 text-cream/60 hover:text-cream"
+          className="rounded-full px-2 text-cream/75 hover:text-cream"
         >
           ×
         </button>

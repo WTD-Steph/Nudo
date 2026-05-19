@@ -153,7 +153,7 @@ export function ContactForm() {
       </div>
 
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <p className="text-[12px] text-ink/50">
+        <p className="text-[12px] text-ink/65">
           We&rsquo;ll only use your email to reply. No newsletters from this
           form.
         </p>

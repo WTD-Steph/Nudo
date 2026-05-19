@@ -93,7 +93,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         {/* Breadcrumbs */}
         <nav
           aria-label="Breadcrumb"
-          className="mx-auto max-w-[1280px] px-12 pt-8 text-[13px] text-ink/60"
+          className="mx-auto max-w-[1280px] px-12 pt-8 text-[13px] text-ink/75"
         >
           <Link href={ROUTES.home}>Home</Link>
           <span className="mx-2">/</span>
@@ -107,7 +107,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           <div className="relative aspect-square overflow-hidden rounded-[22px] bg-sand">
             <HeroImage p={p} />
             {p.placeholder && (
-              <span className="absolute bottom-4 left-4 rounded-full bg-cream px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-ink/60">
+              <span className="absolute bottom-4 left-4 rounded-full bg-cream px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-ink/75">
                 Photography landing soon
               </span>
             )}
@@ -127,7 +127,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             </h1>
             <div className="mt-3 flex items-center gap-3 text-[22px] font-bold">
               {p.was && (
-                <s className="text-[18px] font-normal text-ink/40">{p.was}</s>
+                <s className="text-[18px] font-normal text-ink/60">{p.was}</s>
               )}
               {p.price}
               {p.tag && (
@@ -160,7 +160,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             <ul className="mt-8 grid grid-cols-2 gap-x-6 gap-y-3 border-t border-rule-cream pt-6">
               {p.specs.map((s) => (
                 <li key={s.label} className="text-[14px]">
-                  <span className="block text-ink/50">{s.label}</span>
+                  <span className="block text-ink/65">{s.label}</span>
                   <span className="block font-medium text-ink">{s.value}</span>
                 </li>
               ))}
@@ -271,7 +271,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         <section className="px-12 py-16">
           <div className="mx-auto max-w-[1280px]">
             <div className="rounded-[22px] bg-sand p-10 lg:p-14">
-              <div className="mb-3 font-mono text-[11px] uppercase tracking-widest text-rust">
+              <div className="mb-3 font-mono text-[12px] font-semibold uppercase tracking-widest text-green">
                 What this won&apos;t do
               </div>
               <p className="m-0 max-w-[860px] text-balance text-[clamp(22px,2.4vw,32px)] font-bold leading-snug tracking-tight">
