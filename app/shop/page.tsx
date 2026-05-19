@@ -10,7 +10,7 @@ import Link from "next/link";
 import { ROUTES } from "@/lib/links";
 
 export const metadata = {
-  title: "Shop — Nudo Lab",
+  title: "Shop",
   description:
     "Friendly brewing tools for beginners. Espresso, pour-over, drip bags, scales, and accessories — picked for people who are just starting out.",
 };

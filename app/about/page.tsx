@@ -5,7 +5,7 @@ import { DOMark } from "@/components/DOMark";
 import { ROUTES, CONTACT_EMAIL, IG_URL } from "@/lib/links";
 
 export const metadata = {
-  title: "About — Nudo Lab",
+  title: "About",
   description:
     "Friendly brewing tools for beginners. Made by WTD. The story behind the rename, the brand, and the team.",
 };

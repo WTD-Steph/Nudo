@@ -23,10 +23,17 @@ export function generateMetadata({
   params: { slug: string };
 }): Metadata {
   const p = getProduct(params.slug);
-  if (!p) return { title: "Not found — Nudo Lab" };
+  if (!p) return { title: "Not found" };
   return {
-    title: `${p.name} — Nudo Lab`,
+    title: p.name,
     description: p.desc,
+    openGraph: {
+      title: p.name,
+      description: p.desc,
+      images: [
+        `/og?title=${encodeURIComponent(p.name)}&eyebrow=${encodeURIComponent(p.jaSubtitle ?? "Shop")}`,
+      ],
+    },
   };
 }
 

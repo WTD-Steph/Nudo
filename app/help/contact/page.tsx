@@ -1,7 +1,7 @@
 import { ComingSoon } from "@/components/ComingSoon";
 import { CONTACT_EMAIL } from "@/lib/links";
 
-export const metadata = { title: "Contact — Nudo Lab" };
+export const metadata = { title: "Contact" };
 
 export default function ContactPage() {
   return (

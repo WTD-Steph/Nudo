@@ -1,6 +1,6 @@
 import { ComingSoon } from "@/components/ComingSoon";
 
-export const metadata = { title: "Sign in — Nudo Lab" };
+export const metadata = { title: "Sign in" };
 
 export default function SignInPage() {
   return (

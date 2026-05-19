@@ -1,6 +1,6 @@
 import { ComingSoon } from "@/components/ComingSoon";
 
-export const metadata = { title: "Journal — Nudo Lab" };
+export const metadata = { title: "Journal" };
 
 export default function JournalPage() {
   return (

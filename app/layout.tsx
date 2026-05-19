@@ -46,6 +46,9 @@ export const metadata: Metadata = {
       "Friendly brewing tools for beginners. Espresso, pour-over, and starter kits without the gatekeeping.",
     images: ["/og?title=For%20every%20first%20brews."],
   },
+};
+
+export const viewport = {
   themeColor: "#0D330E",
 };
 
