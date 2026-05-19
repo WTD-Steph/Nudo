@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { ROUTES } from "@/lib/links";
+
 const CARDS = [
   {
     num: "01",
@@ -66,6 +69,16 @@ export function Reassure() {
           </div>
         ))}
       </div>
+
+      <Link
+        href={ROUTES.contact}
+        className="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-[22px] bg-mustard px-7 py-5 text-ink transition hover:-translate-y-0.5"
+      >
+        <span className="text-[15px] font-semibold">
+          Still anxious? Email us. A real person replies within a day.
+        </span>
+        <span className="text-[14px] font-bold">Say hi →</span>
+      </Link>
     </section>
   );
 }

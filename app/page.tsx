@@ -1,3 +1,4 @@
+import { AnnouncementBar } from "@/components/AnnouncementBar";
 import { Nav } from "@/components/sections/Nav";
 import { Hero } from "@/components/sections/Hero";
 import { TrustBand } from "@/components/sections/TrustBand";
@@ -11,17 +12,20 @@ import { Footer } from "@/components/sections/Footer";
 
 export default function HomePage() {
   return (
-    <main className="bg-cream">
+    <>
+      <AnnouncementBar />
       <Nav />
-      <Hero />
-      <TrustBand />
-      <Reassure />
-      <Catalog />
-      <StarterKit />
-      <Journey />
-      <Story />
-      <Newsletter />
+      <main className="bg-cream">
+        <Hero />
+        <TrustBand />
+        <Reassure />
+        <Catalog />
+        <StarterKit />
+        <Journey />
+        <Story />
+        <Newsletter />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

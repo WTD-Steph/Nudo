@@ -1,7 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
+import { ROUTES } from "@/lib/links";
 
 type Product = {
   slug: string;
@@ -141,8 +143,9 @@ export function Catalog() {
       </div>
       <div className="grid grid-cols-1 gap-x-5 gap-y-7 md:grid-cols-2 lg:grid-cols-3">
         {visible.map((p) => (
-          <div
+          <Link
             key={p.slug}
+            href={ROUTES.product(p.slug)}
             className="group flex cursor-pointer flex-col rounded-[22px] bg-cream-paper p-3.5 transition hover:-translate-y-[3px]"
           >
             <div className="relative mb-4 aspect-square overflow-hidden rounded-[14px] bg-sand">
@@ -175,12 +178,12 @@ export function Catalog() {
                   )}
                   {p.price}
                 </div>
-                <button className="cursor-pointer rounded-full border-none bg-green px-3.5 py-2 text-xs font-semibold text-cream">
-                  Add to cart
-                </button>
+                <span className="rounded-full border border-green/30 px-3.5 py-2 text-xs font-semibold text-green group-hover:bg-green group-hover:text-cream">
+                  View details →
+                </span>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>

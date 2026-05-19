@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { ROUTES } from "@/lib/links";
+
 export function Story() {
   return (
     <section className="grid items-center gap-16 border-t border-rule-cream px-12 py-20 lg:grid-cols-[460px_1fr]">
@@ -36,12 +39,12 @@ export function Story() {
             Brewed and packed somewhere with bad parking
           </small>
         </div>
-        <a
-          href="#"
+        <Link
+          href={ROUTES.about}
           className="mt-5 inline-flex items-center gap-2 border-b-2 border-mustard pb-1 text-[15px] font-semibold text-ink no-underline"
         >
           Read our story →
-        </a>
+        </Link>
       </div>
     </section>
   );

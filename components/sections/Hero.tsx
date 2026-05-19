@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ROUTES } from "@/lib/links";
 
 export function Hero() {
   return (
@@ -20,12 +22,18 @@ export function Hero() {
           doesn&rsquo;t have to be complicated.
         </p>
         <div className="flex flex-wrap gap-3">
-          <a className="inline-flex items-center gap-2.5 rounded-full bg-green px-6 py-4 text-[15px] font-semibold text-cream transition hover:-translate-y-0.5" href="#">
+          <Link
+            href={ROUTES.kits}
+            className="inline-flex items-center gap-2.5 rounded-full bg-green px-6 py-4 text-[15px] font-semibold text-cream transition hover:-translate-y-0.5"
+          >
             Shop starter kits <span>→</span>
-          </a>
-          <a className="inline-flex items-center gap-2.5 rounded-full border-[1.5px] border-green bg-transparent px-6 py-4 text-[15px] font-semibold text-ink" href="#">
+          </Link>
+          <Link
+            href={ROUTES.firstBrewGuide}
+            className="inline-flex items-center gap-2.5 rounded-full border-[1.5px] border-green bg-transparent px-6 py-4 text-[15px] font-semibold text-ink hover:bg-green hover:text-cream"
+          >
             First-brew guide
-          </a>
+          </Link>
         </div>
       </div>
       <div className="relative aspect-[4/5] overflow-hidden rounded-[28px] bg-sand">

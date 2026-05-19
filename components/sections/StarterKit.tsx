@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ROUTES } from "@/lib/links";
 
 const ITEMS = [
   { nm: "Dosing Cup", meta: "58 mm", img: "/products/dosing-cup-funnel.png" },
@@ -31,12 +33,12 @@ export function StarterKit() {
               Save 19%
             </span>
           </div>
-          <a
-            href="#"
-            className="inline-flex items-center gap-2.5 self-start rounded-full bg-cream px-6 py-4 text-[15px] font-bold text-ink no-underline"
+          <Link
+            href={ROUTES.firstBrewKit}
+            className="inline-flex items-center gap-2.5 self-start rounded-full bg-cream px-6 py-4 text-[15px] font-bold text-ink no-underline transition hover:-translate-y-0.5"
           >
             Get the kit <span>→</span>
-          </a>
+          </Link>
         </div>
         <div className="grid grid-cols-2 gap-3">
           {ITEMS.map((it) => (
