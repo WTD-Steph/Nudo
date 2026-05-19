@@ -1,10 +1,10 @@
-import { DOMark } from "../DOMark";
+import Image from "next/image";
 
 const ITEMS = [
-  { nm: "Walnut Tamper", meta: "58 mm" },
-  { nm: "Dosing Cup", meta: "70 ml" },
-  { nm: "WDT Distributor", meta: "8 needle" },
-  { nm: "Knock Mat", meta: "Silicone" },
+  { nm: "Dosing Cup", meta: "58 mm", img: "/products/dosing-cup-funnel.png" },
+  { nm: "Distributor", meta: "8 pin", img: "/products/distributor.png" },
+  { nm: "Tamping Mat", meta: "Silicone", img: "/products/tamping-mat.png" },
+  { nm: "Halo Mini Scale", meta: "0.1 g", img: "/products/scale-mini.png" },
 ];
 
 export function StarterKit() {
@@ -44,11 +44,13 @@ export function StarterKit() {
               key={it.nm}
               className="flex flex-col gap-2.5 rounded-2xl border border-cream/10 bg-cream/[0.08] p-3.5"
             >
-              <div className="frame-stripes relative aspect-square rounded-[10px] bg-cream/5">
-                <DOMark
-                  size={36}
-                  color="rgba(249,244,222,0.35)"
-                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+              <div className="relative aspect-square overflow-hidden rounded-[10px] bg-cream/5">
+                <Image
+                  src={it.img}
+                  alt={it.nm}
+                  fill
+                  sizes="160px"
+                  className="object-cover"
                 />
               </div>
               <div className="text-[13px] font-semibold">{it.nm}</div>

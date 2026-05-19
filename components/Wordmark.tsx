@@ -1,37 +1,33 @@
+import Image from "next/image";
+
 type Props = {
-  size?: number;
-  color?: string;
-  dotColor?: string;
+  /** Logical pixel height of the wordmark. */
+  height?: number;
+  /** Brand colorway. */
+  variant?: "green" | "clay" | "cream";
+  className?: string;
 };
 
-export function Wordmark({ size = 32, color = "currentColor", dotColor }: Props) {
+const SRC: Record<NonNullable<Props["variant"]>, string> = {
+  green: "/brand/wordmark-green.png",
+  clay: "/brand/wordmark-clay.png",
+  cream: "/brand/wordmark-cream.png",
+};
+
+// Real wordmark renders at ~2.83:1 (3508×1241).
+const RATIO = 2.83;
+
+export function Wordmark({ height = 32, variant = "green", className }: Props) {
+  const width = Math.round(height * RATIO);
   return (
-    <span
-      style={{
-        fontFamily: "var(--font-urbanist)",
-        fontWeight: 700,
-        letterSpacing: "-0.045em",
-        lineHeight: 1,
-        fontSize: size,
-        color,
-        display: "inline-flex",
-        alignItems: "baseline",
-      }}
-    >
-      NUDO
-      <span
-        aria-hidden
-        style={{
-          width: size * 0.18,
-          height: size * 0.18,
-          borderRadius: "50%",
-          background: dotColor ?? color,
-          display: "inline-block",
-          marginLeft: size * 0.05,
-          alignSelf: "flex-end",
-          marginBottom: size * 0.12,
-        }}
-      />
-    </span>
+    <Image
+      src={SRC[variant]}
+      alt="Nudo Lab"
+      width={width}
+      height={height}
+      priority
+      className={className}
+      style={{ height, width: "auto" }}
+    />
   );
 }

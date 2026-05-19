@@ -39,7 +39,7 @@ export function Footer() {
       <div className="grid gap-12 border-b border-rule-charcoal pb-14 lg:grid-cols-[2fr_1fr_1fr_1fr]">
         <div>
           <div className="mb-5">
-            <Wordmark size={44} color="var(--nl-cream)" dotColor="var(--nl-warm)" />
+            <Wordmark height={44} variant="cream" />
           </div>
           <p className="m-0 max-w-[320px] text-[15px] leading-snug text-cream/60">
             For every first brews. Friendly brewing tools for beginners. Part

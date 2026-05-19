@@ -1,69 +1,100 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 type Product = {
+  slug: string;
   name: string;
   desc: string;
   price: string;
   was?: string;
   tag?: string;
   tagKind?: "default" | "new" | "kit";
-  category: "espresso" | "pour-over" | "drip-bags" | "kits";
+  image: string;
+  category: "espresso" | "pour-over" | "scales" | "accessories";
 };
 
 const PRODUCTS: Product[] = [
   {
+    slug: "dosing-cup",
     name: "Espresso Dosing Cup",
-    desc: "Clean transfers, consistent doses. Fits perfectly in your setup.",
+    desc: "Lightweight, clean transfers, consistent doses. Fits 58 mm portafilters.",
     price: "$18",
     tag: "Bestseller",
     tagKind: "default",
+    image: "/products/dosing-cup.png",
     category: "espresso",
   },
   {
-    name: "WDT Distributor",
-    desc:
-      "Levels grounds with eight tiny needles. Less channeling, better extraction.",
+    slug: "distributor",
+    name: "Gravity Leveler & Distributor",
+    desc: "Spring-loaded, eight pins. Levels the bed before tamping — fewer channeling problems.",
     price: "$24",
     tag: "New",
     tagKind: "new",
+    image: "/products/distributor.png",
     category: "espresso",
   },
   {
-    name: "First-Brew Kit",
-    desc:
-      "Everything you need to pull your first shot — tamper, cup, mat, cloth.",
-    price: "$68",
-    was: "$84",
-    tag: "Kit",
-    tagKind: "kit",
-    category: "kits",
+    slug: "portafilter-basket",
+    name: "Ultra Precision Basket",
+    desc: "58 mm stainless basket, 17–19 g. Even extraction, even on entry-level machines.",
+    price: "$28",
+    image: "/products/portafilter-basket.png",
+    category: "espresso",
   },
   {
-    name: "Walnut Tamper",
-    desc:
-      "58 mm flat base, walnut handle. Comfortable in the hand, easy to learn.",
-    price: "$36",
+    slug: "tamping-mat",
+    name: "Silicone Tamping Mat",
+    desc: "Saves your wrist and your counter. Knock-friendly, dishwasher safe.",
+    price: "$22",
+    image: "/products/tamping-mat.png",
+    category: "accessories",
+  },
+  {
+    slug: "scale-mini",
+    name: "Halo Mini Coffee Scale",
+    desc: "0.1 g precision, Type-C rechargeable. The thing that fixes your inconsistent brews.",
+    price: "$32",
     tag: "Bestseller",
     tagKind: "default",
-    category: "espresso",
+    image: "/products/scale-mini.png",
+    category: "scales",
   },
   {
-    name: "V60 Drip Bag · 8 ct",
-    desc:
-      "Non-woven single-serve drip bag. Just add water — your first pour-over.",
-    price: "$12",
+    slug: "portable-dripper",
+    name: "Portable V60 Dripper",
+    desc: "Stainless mesh, no paper needed. Pour-over anywhere — desk, camp, hotel room.",
+    price: "$26",
     tag: "Easy",
     tagKind: "default",
-    category: "drip-bags",
+    image: "/products/portable-dripper.png",
+    category: "pour-over",
   },
   {
-    name: "Sensory Cup · 200 ml",
-    desc:
-      "Tulip-shaped tasting cup. Helps you actually taste what you're brewing.",
-    price: "$14",
+    slug: "sharing-pot",
+    name: "Sharing Pot Glass · 400 ml",
+    desc: "Heat-resistant glass server. Built to fit under a V60 and pour clean.",
+    price: "$24",
+    image: "/products/sharing-pot.png",
     category: "pour-over",
+  },
+  {
+    slug: "milk-jug",
+    name: "Stainless Milk Jug",
+    desc: "Steam, swirl, pour. Comfortable handle, sharp spout, easy to clean.",
+    price: "$19",
+    image: "/products/milk-jug.png",
+    category: "accessories",
+  },
+  {
+    slug: "storage-tube",
+    name: "Coffee Storage Tubes",
+    desc: "Glass display set. See your beans, keep them fresh.",
+    price: "$36",
+    image: "/products/storage-tube.png",
+    category: "accessories",
   },
 ];
 
@@ -71,8 +102,8 @@ const FILTERS: { key: string; label: string }[] = [
   { key: "all", label: "All" },
   { key: "espresso", label: "Espresso" },
   { key: "pour-over", label: "Pour-over" },
-  { key: "drip-bags", label: "Drip bags" },
-  { key: "kits", label: "Kits" },
+  { key: "scales", label: "Scales" },
+  { key: "accessories", label: "Accessories" },
 ];
 
 function tagClasses(kind: Product["tagKind"]) {
@@ -111,10 +142,17 @@ export function Catalog() {
       <div className="grid grid-cols-1 gap-x-5 gap-y-7 md:grid-cols-2 lg:grid-cols-3">
         {visible.map((p) => (
           <div
-            key={p.name}
+            key={p.slug}
             className="group flex cursor-pointer flex-col rounded-[22px] bg-cream-2 p-3.5 transition hover:-translate-y-[3px]"
           >
-            <div className="frame-stripes relative mb-4 aspect-[4/5] overflow-hidden rounded-[14px] bg-cream-soft">
+            <div className="relative mb-4 aspect-square overflow-hidden rounded-[14px] bg-cream-soft">
+              <Image
+                src={p.image}
+                alt={p.name}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover transition group-hover:scale-[1.02]"
+              />
               {p.tag && (
                 <span
                   className={`absolute left-3 top-3 rounded-full px-2.5 py-1 text-[11px] font-semibold ${tagClasses(p.tagKind)}`}
@@ -122,9 +160,6 @@ export function Catalog() {
                   {p.tag}
                 </span>
               )}
-              <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cream px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-mute">
-                photo · {p.name.toLowerCase()}
-              </span>
             </div>
             <div className="flex flex-col gap-1.5 px-2 pb-2.5 pt-1">
               <div className="text-[19px] font-bold tracking-tight">

@@ -1,4 +1,4 @@
-import { DOMark } from "../DOMark";
+import Image from "next/image";
 
 export function Hero() {
   return (
@@ -25,17 +25,20 @@ export function Hero() {
           </a>
         </div>
       </div>
-      <div className="hero-warm-glow relative aspect-[4/5] overflow-hidden rounded-[28px]">
-        <DOMark
-          size={64}
-          color="rgba(33,33,33,0.55)"
-          className="absolute left-[22px] top-[22px]"
+      <div className="relative aspect-[4/5] overflow-hidden rounded-[28px] bg-cream-soft">
+        <Image
+          src="/products/dosing-cup.png"
+          alt="Nudo first-brew kit"
+          fill
+          sizes="(max-width: 1024px) 100vw, 540px"
+          priority
+          className="object-cover"
         />
         <span className="absolute right-[22px] top-[22px] rounded-full bg-charcoal px-3.5 py-2 text-xs font-semibold tracking-wide text-cream">
           For every first brews
         </span>
-        <div className="absolute inset-x-[22px] bottom-[22px] flex items-center justify-between rounded-full bg-cream px-3.5 py-2.5 font-mono text-[11px] uppercase tracking-widest text-charcoal">
-          <span>HERO · first-brew kit</span>
+        <div className="absolute inset-x-[22px] bottom-[22px] flex items-center justify-between rounded-full bg-cream/95 px-3.5 py-2.5 font-mono text-[11px] uppercase tracking-widest text-charcoal backdrop-blur">
+          <span>First-Brew Kit</span>
           <b className="font-bold">NL-001</b>
         </div>
       </div>

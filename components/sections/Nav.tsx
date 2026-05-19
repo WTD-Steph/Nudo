@@ -9,7 +9,7 @@ export function Nav() {
         <a className="hover:text-clay" href="#">Guides</a>
         <a className="hover:text-clay" href="#">About</a>
       </div>
-      <Wordmark size={28} color="var(--nl-charcoal)" />
+      <Wordmark height={28} variant="green" />
       <div className="flex items-center justify-end gap-3 text-sm">
         <a href="#">Sign in</a>
         <a

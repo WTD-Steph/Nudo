@@ -30,6 +30,12 @@ yarn-error.log*
 # vercel
 .vercel
 
+# raw Drive dump — regenerate with scripts/fetch_drive.py
+/public/assets/drive/
+
+# Playwright screenshots from dev verification
+/.playwright-mcp/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts.bak
