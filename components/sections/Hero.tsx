@@ -4,8 +4,11 @@ export function Hero() {
   return (
     <section className="grid grid-cols-1 items-center gap-14 px-12 pb-20 pt-8 lg:grid-cols-[1fr_540px]">
       <div>
-        <div className="mb-7 inline-flex items-center gap-2.5 self-start rounded-full bg-cream-soft px-3.5 py-1.5 text-[13px] font-semibold">
+        <div className="mb-7 inline-flex items-center gap-3 self-start rounded-full bg-cream-soft px-3.5 py-1.5 text-[13px] font-semibold">
           <span className="text-base">👋</span> Hi — first time here?
+          <span lang="ja" className="border-l border-charcoal/15 pl-3 font-mono text-[11px] font-normal text-charcoal/55">
+            ヌードラボ · 初心者向け
+          </span>
         </div>
         <h1 className="m-0 text-balance text-[clamp(72px,9.5vw,148px)] font-bold leading-[0.92] tracking-[-0.045em]">
           For every <br />
