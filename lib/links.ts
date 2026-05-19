@@ -4,7 +4,7 @@
 
 // External — TODO(founder): replace placeholders.
 export const MARKETPLACE_URL = "#"; // Shopee / Tokopedia / Shopify — set when commerce ships.
-export const MAKKER_URL = "#"; // TODO(makker-url) — Makker's own site.
+export const EXAKT_URL = "#"; // TODO(exakt-url) — Exakt's own site.
 export const IG_URL = "https://instagram.com"; // TODO(founder): real handle.
 export const WA_URL = "https://wa.me/"; // TODO(founder): real number.
 export const CONTACT_EMAIL = "hello@nudolab.com"; // TODO(founder): confirm.
@@ -25,7 +25,7 @@ export const ROUTES = {
   journal: "/journal",
   journalPost: (slug: string) => `/journal/${slug}`,
   about: "/about",
-  makker: "/about/makker",
+  exakt: "/about/exakt",
   shipping: "/help/shipping-returns",
   trackOrder: "/help/track-order",
   contact: "/help/contact",
@@ -77,7 +77,7 @@ export const FOOTER_COLS = [
     h: "Family",
     items: [
       { label: "Nudo Lab — starters", href: ROUTES.about },
-      { label: "Makker — for makers", href: ROUTES.makker },
+      { label: "Exakt — for makers", href: ROUTES.exakt },
     ],
   },
 ];

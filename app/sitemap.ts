@@ -17,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/guides",
     "/journal",
     "/about",
-    "/about/makker",
+    "/about/exakt",
     "/help/contact",
     "/help/shipping-returns",
     "/help/track-order",

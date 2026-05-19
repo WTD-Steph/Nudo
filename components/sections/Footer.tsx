@@ -26,10 +26,10 @@ export function Footer() {
             <strong className="font-semibold text-cream">Outgrown the basics?</strong>{" "}
             Meet{" "}
             <Link
-              href={ROUTES.makker}
+              href={ROUTES.exakt}
               className="text-mustard underline underline-offset-4"
             >
-              Makker
+              Exakt
             </Link>{" "}
             — our refined-tools brand for makers ready to upgrade. →
           </p>

@@ -50,7 +50,7 @@ Color rules enforced in components:
 | `/kits` · `/kits/[slug]` × 3 | First-Brew · Pour-Over · Sensory kits with bundle breakdown |
 | `/guides` · `/guides/[slug]` × 4 | First-brew guide (1300 words) · 36-term glossary · Care · Why your first shot was bad |
 | `/journal` · `/journal/[slug]` × 3 | Journal posts (ops, advice, voice) |
-| `/about` · `/about/makker` | Story with WTD→Nudo rename · Makker bridge with comparison table |
+| `/about` · `/about/exakt` | Brand story · Exakt bridge with comparison table |
 | `/help/contact` · `/help/track-order` · `/help/shipping-returns` | Real forms + policy + FAQ |
 | `/api/subscribe` · `/api/contact` · `/api/track-order` | POST stubs — validate, log, return 200 (TODO provider) |
 | `/og` | Dynamic OG generator (`@vercel/og` on edge) |
@@ -74,13 +74,13 @@ components/
   ContactForm, TrackOrderForm "use client" forms with validation +
                               aria-live announcements
   Newsletter                  client form posting /api/subscribe
-  AnnouncementBar, ComingSoon, MakkerComparison, JsonLd
+  AnnouncementBar, ComingSoon, ExaktComparison, JsonLd
   sections/                   the 10 home sections
 content/                      (empty — Phase 1 chose TS data files
                               over MDX; revisit if posts grow)
 lib/
   links.ts                    NAV_LINKS, FOOTER_COLS, MARKETPLACE_URL,
-                              MAKKER_URL, CONTACT_EMAIL — single edit
+                              EXAKT_URL, CONTACT_EMAIL — single edit
                               point when commerce ships
   products.ts (11)            type Product + per-product opt-in fields
   kits.ts (3)                 type Kit + product slug bundles
@@ -108,8 +108,8 @@ scripts/
 - All `href="#"` placeholders replaced with real routes
 - Shop catalog rebuilt with 11 real products (incl. Sensory Cup, Drip Bags)
 - Product detail template with opt-in special sections (sensory icons, colors, how-to-enjoy)
-- About page with WTD→Nudo rename narrative
-- Makker bridge with brand-brief comparison table
+- About page with the brand story
+- Exakt bridge with brand-brief comparison table
 - Favicon + OG generator + brand-voice 404
 
 ### Phase 2 — Long-form content
@@ -126,7 +126,7 @@ scripts/
 - Newsletter wired to API with submitting/success/error states
 - Skip-to-content link + `id="main-content"` on every page
 - `prefers-reduced-motion` guard in globals
-- **Zero axe-core violations** (wcag2a/wcag2aa) on `/`, a PDP, the first-brew guide, the Makker bridge, contact, shipping
+- **Zero axe-core violations** (wcag2a/wcag2aa) on `/`, a PDP, the first-brew guide, the Exakt bridge, contact, shipping
 
 ## Founder TODOs
 
@@ -135,7 +135,7 @@ Search the codebase for `TODO(...)` to find every blocked-on-you task. Highlight
 | Topic | Where | What to provide |
 |---|---|---|
 | **Commerce** | `lib/links.ts` `MARKETPLACE_URL` | Shopify Hydrogen / Medusa / Shopee/Tokopedia deep link path. When set, the PDP "Reserve" button can become "Buy on …" and `/cart` can be filled in. |
-| **Makker URL** | `lib/links.ts` `MAKKER_URL` | Makker's site URL once live. Currently the Makker bridge button falls back to `/about`. |
+| **Exakt URL** | `lib/links.ts` `EXAKT_URL` | Exakt's site URL once live. Currently the Exakt bridge button falls back to `/about`. |
 | **Newsletter provider** | `app/api/subscribe/route.ts` | Resend / ConvertKit / Mailchimp integration. Currently logs + 200s. |
 | **Contact relay** | `app/api/contact/route.ts` | SMTP via Resend/Sendgrid, or helpdesk API. |
 | **Order tracking** | `app/api/track-order/route.ts` | Shopify order lookup / AfterShip integration. |

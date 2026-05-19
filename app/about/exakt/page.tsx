@@ -1,17 +1,17 @@
 import Link from "next/link";
 import { Nav } from "@/components/sections/Nav";
 import { Footer } from "@/components/sections/Footer";
-import { MakkerComparison } from "@/components/MakkerComparison";
-import { ROUTES, MAKKER_URL } from "@/lib/links";
+import { ExaktComparison } from "@/components/ExaktComparison";
+import { ROUTES, EXAKT_URL } from "@/lib/links";
 
 export const metadata = {
-  title: "When you've outgrown Nudo — meet Makker",
+  title: "When you've outgrown Nudo — meet Exakt",
   description:
-    "Nudo Lab is for the first six months of your coffee journey. When you're ready for refined tools and better materials, there's Makker — our sibling brand for makers.",
+    "Nudo Lab is for the first six months of your coffee journey. When you're ready for refined tools and better materials, there's Exakt — our sibling brand for makers.",
 };
 
-export default function MakkerBridgePage() {
-  const makkerHref = MAKKER_URL !== "#" ? MAKKER_URL : ROUTES.about;
+export default function ExaktBridgePage() {
+  const exaktHref = EXAKT_URL !== "#" ? EXAKT_URL : ROUTES.about;
 
   return (
     <>
@@ -21,7 +21,7 @@ export default function MakkerBridgePage() {
         <section className="px-12 pb-12 pt-16">
           <div className="mx-auto max-w-[920px]">
             <div className="font-mono text-[12px] uppercase tracking-widest text-rust">
-              Sibling brand · Makker
+              Sibling brand · Exakt
             </div>
             <h1 className="m-0 mt-3 text-balance text-[clamp(48px,6vw,96px)] font-bold leading-[0.95] tracking-tight">
               When you&rsquo;ve outgrown Nudo.
@@ -43,10 +43,10 @@ export default function MakkerBridgePage() {
             <p>
               Eventually, you&rsquo;ll want better materials. A tamper
               that&rsquo;s actually weighted right. A scale with a refresh
-              rate you can trust on flow. That&rsquo;s Makker.
+              rate you can trust on flow. That&rsquo;s Exakt.
             </p>
             <p>
-              We made Makker so you wouldn&rsquo;t have to leave us when you
+              We made Exakt so you wouldn&rsquo;t have to leave us when you
               got serious. Same team, different standard.
             </p>
           </div>
@@ -58,7 +58,7 @@ export default function MakkerBridgePage() {
             <h2 className="m-0 mb-8 text-[clamp(28px,3vw,44px)] font-bold leading-tight tracking-tight">
               How they&rsquo;re different.
             </h2>
-            <MakkerComparison />
+            <ExaktComparison />
           </div>
         </section>
 
@@ -69,7 +69,7 @@ export default function MakkerBridgePage() {
               Honest signals
             </div>
             <h3 className="m-0 mt-3 text-[clamp(24px,2.6vw,36px)] font-bold leading-tight tracking-tight">
-              You might be ready for Makker if…
+              You might be ready for Exakt if…
             </h3>
             <ul className="mt-6 flex flex-col gap-3 text-[16px] leading-snug">
               {[
@@ -99,13 +99,13 @@ export default function MakkerBridgePage() {
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link
-                  href={makkerHref}
-                  {...(MAKKER_URL !== "#"
+                  href={exaktHref}
+                  {...(EXAKT_URL !== "#"
                     ? { target: "_blank", rel: "noreferrer" }
                     : {})}
                   className="inline-flex items-center gap-2 rounded-full bg-cream px-6 py-3 text-[15px] font-bold text-ink hover:-translate-y-0.5"
                 >
-                  Visit Makker →
+                  Visit Exakt →
                 </Link>
                 <Link
                   href={ROUTES.shop}
@@ -114,9 +114,9 @@ export default function MakkerBridgePage() {
                   Stay with the basics
                 </Link>
               </div>
-              {MAKKER_URL === "#" && (
+              {EXAKT_URL === "#" && (
                 <p className="mt-4 text-[12px] text-cream/65">
-                  Makker&rsquo;s site is still under wraps. We&rsquo;ll link it
+                  Exakt&rsquo;s site is still under wraps. We&rsquo;ll link it
                   here the moment it lands.
                 </p>
               )}

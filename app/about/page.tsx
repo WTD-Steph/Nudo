@@ -55,26 +55,13 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* WTD → Nudo rename */}
+        {/* About the name */}
         <section className="px-12 py-12">
           <div className="mx-auto max-w-[920px] rounded-[22px] bg-cream-paper p-10">
             <h2 className="m-0 text-[clamp(28px,3vw,44px)] font-bold leading-tight tracking-tight">
               About the name.
             </h2>
-            <p className="mt-5 text-[17px] leading-relaxed text-ink/80">
-              Our parent company is{" "}
-              <strong className="font-semibold text-ink">WTD</strong> (The
-              Daily). We rebranded from &ldquo;WTD Lab&rdquo; to Nudo Lab
-              because the old name had two problems: nobody could remember
-              what the acronym stood for, and &ldquo;WTD&rdquo; sounded too
-              much like <strong>WDT</strong> — a piece of coffee jargon our
-              customers were trying to escape.
-            </p>
-            <p className="mt-4 text-[17px] leading-relaxed text-ink/80">
-              So we changed it. We&rsquo;d rather have a name you remember
-              than one we have to keep explaining.
-            </p>
-            <p className="mt-4 text-[15px] leading-relaxed text-ink/75">
+            <p className="mt-5 text-[15px] leading-relaxed text-ink/75">
               In Japanese:{" "}
               <span lang="ja" className="font-ja text-ink/80">
                 ヌードラボ
@@ -106,10 +93,10 @@ export default function AboutPage() {
               something with a faster refresh rate and a steel body — that&rsquo;s
               when you graduate to{" "}
               <Link
-                href={ROUTES.makker}
+                href={ROUTES.exakt}
                 className="border-b-2 border-mustard pb-0.5 font-semibold text-ink"
               >
-                Makker
+                Exakt
               </Link>{" "}
               , our sibling brand for makers ready to upgrade. Same team,
               different shelf.
@@ -117,11 +104,11 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Meet Makker */}
+        {/* Meet Exakt */}
         <section className="px-12 py-12">
           <div className="mx-auto max-w-[920px]">
             <Link
-              href={ROUTES.makker}
+              href={ROUTES.exakt}
               className="group flex flex-wrap items-center justify-between gap-6 rounded-[22px] bg-green p-10 text-cream transition hover:-translate-y-0.5"
             >
               <div className="max-w-[520px]">
@@ -136,7 +123,7 @@ export default function AboutPage() {
                 </p>
               </div>
               <span className="text-[15px] font-semibold text-mustard group-hover:underline">
-                Read about Makker →
+                Read about Exakt →
               </span>
             </Link>
           </div>
