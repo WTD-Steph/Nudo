@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --nl-charcoal: #212121;
+  --nl-charcoal-2: #2c2a26;
+  --nl-charcoal-soft: #383634;
+  --nl-cream: #f9f4de;
+  --nl-cream-2: #f3eed5;
+  --nl-cream-soft: #ece5c5;
+  --nl-warm: #e8c97a;
+  --nl-clay: #c46a3a;
+  --nl-mute: #76716a;
+  --nl-rule-cream: rgba(33, 33, 33, 0.12);
+  --nl-rule-charcoal: rgba(249, 244, 222, 0.14);
+}
+
+html,
+body {
+  background: var(--nl-cream);
+  color: var(--nl-charcoal);
+  font-feature-settings: "ss01" on, "ss02" on;
+}
+
+/* Headline highlight — yellow underline behind text */
+.hl-underline {
+  position: relative;
+  display: inline-block;
+  isolation: isolate;
+}
+.hl-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.07em;
+  height: 0.22em;
+  background: var(--nl-warm);
+  z-index: -1;
+  border-radius: 0.1em;
+}
+
+/* Diagonal stripe pattern used in placeholder frames */
+.frame-stripes {
+  position: relative;
+  overflow: hidden;
+}
+.frame-stripes::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    135deg,
+    transparent 0 22px,
+    rgba(33, 33, 33, 0.05) 22px 23px
+  );
+}
+
+/* Hero visual: warm radial gradient on cream */
+.hero-warm-glow {
+  background:
+    radial-gradient(circle at 30% 30%, rgba(232, 201, 122, 0.7), transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(196, 106, 58, 0.3), transparent 55%),
+    var(--nl-cream-soft);
+}
