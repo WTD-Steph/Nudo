@@ -27,7 +27,7 @@ const notoJp = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nudolab.vercel.app"),
+  metadataBase: new URL("https://www.nudo-lab.com"),
   title: {
     default: "Nudo Lab — For every first brews",
     template: "%s · Nudo Lab",

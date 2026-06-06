@@ -5,7 +5,7 @@ import { POSTS } from "@/lib/journal";
 import { KITS } from "@/lib/kits";
 import { CATEGORIES } from "@/lib/products";
 
-const SITE = "https://nudolab.vercel.app";
+const SITE = "https://www.nudo-lab.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

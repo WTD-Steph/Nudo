@@ -6,7 +6,7 @@ import { type Kit } from "@/lib/kits";
 import { type Guide } from "@/lib/guides";
 import { type Post } from "@/lib/journal";
 
-export const SITE = "https://nudolab.vercel.app";
+export const SITE = "https://www.nudo-lab.com";
 export const ORG_NAME = "Nudo Lab";
 
 export function organizationLd() {
