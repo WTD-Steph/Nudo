@@ -14,14 +14,15 @@ export function organizationLd() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: ORG_NAME,
+    alternateName: "ヌードラボ",
     url: SITE,
     logo: `${SITE}/icon.png`,
     description:
-      "Friendly brewing tools for beginners. Espresso, pour-over, and starter kits, without the gatekeeping.",
-    parentOrganization: {
-      "@type": "Organization",
-      name: "WTD",
-      alternateName: "The Daily",
+      "Friendly brewing tools for beginners. Designed in Tokyo, shipped worldwide from Singapore.",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Tokyo",
+      addressCountry: "JP",
     },
     sameAs: [
       // TODO(founder): populate with real social URLs from lib/links.ts

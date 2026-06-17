@@ -7,7 +7,7 @@ import { ROUTES, CONTACT_EMAIL, IG_URL } from "@/lib/links";
 export const metadata = {
   title: "About",
   description:
-    "Friendly brewing tools for beginners. Made by WTD. The story behind the rename, the brand, and the team.",
+    "Friendly brewing tools for beginners. Designed in Tokyo, shipped worldwide from Singapore.",
 };
 
 export default function AboutPage() {
@@ -131,15 +131,27 @@ export default function AboutPage() {
 
         {/* Where to find us */}
         <section className="border-t border-rule-cream px-12 py-16">
-          <div className="mx-auto grid max-w-[920px] gap-8 md:grid-cols-3">
+          <div className="mx-auto grid max-w-[920px] gap-8 md:grid-cols-2 lg:grid-cols-4">
             <div>
               <div className="font-mono text-[11px] uppercase tracking-widest text-rust">
                 Studio
               </div>
               <p className="mt-2 text-[16px] leading-snug">
-                Brewed and packed somewhere with bad parking.
+                Tokyo<span lang="ja" className="font-ja"> · 東京</span>
                 <br />
-                <span className="text-ink/75">Indonesia · 06:40 local.</span>
+                <span className="text-ink/75">Where the ideas brew.</span>
+              </p>
+            </div>
+            <div>
+              <div className="font-mono text-[11px] uppercase tracking-widest text-rust">
+                Fulfilment
+              </div>
+              <p className="mt-2 text-[16px] leading-snug">
+                Singapore
+                <br />
+                <span className="text-ink/75">
+                  Ships worldwide from here.
+                </span>
               </p>
             </div>
             <div>

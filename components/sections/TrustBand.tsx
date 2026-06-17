@@ -1,8 +1,8 @@
 const ITEMS = [
-  "Free shipping over $40",
+  "Free worldwide shipping over $40",
   "30-day no-questions returns",
   "Beginner-friendly guides included",
-  "Real humans on chat 9–6 ET",
+  "Real humans on chat 10–18 JST",
 ];
 
 export function TrustBand() {

@@ -13,7 +13,7 @@ export function Story() {
           }}
         />
         <span className="absolute bottom-[22px] left-[22px] rounded-full bg-cream px-3.5 py-2 font-mono text-[11px] uppercase tracking-widest">
-          Studio · 06:40
+          Tokyo Studio · 06:40 JST
         </span>
       </div>
       <div>
@@ -36,7 +36,7 @@ export function Story() {
         <div className="mt-6 text-[15px] font-semibold">
           — The Nudo team
           <small className="mt-0.5 block font-normal text-ink/75">
-            Brewed and packed somewhere with bad parking
+            Tokyo studio · Singapore warehouse
           </small>
         </div>
         <Link

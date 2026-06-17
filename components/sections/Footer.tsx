@@ -19,8 +19,8 @@ export function Footer() {
             <Wordmark height={44} variant="cream" />
           </Link>
           <p className="m-0 max-w-[320px] text-[15px] leading-snug text-cream/75">
-            For every first brews. Friendly brewing tools for beginners. Part
-            of the WTD family.
+            For every first brews. Friendly brewing tools for beginners.
+            Designed in Tokyo, shipped worldwide from Singapore.
           </p>
           <p className="mt-4 max-w-[320px] text-[14px] leading-snug text-cream/80">
             <strong className="font-semibold text-cream">Outgrown the basics?</strong>{" "}

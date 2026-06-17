@@ -2,7 +2,7 @@
 
 Friendly brewing tools for beginners. **For every first brews.**
 
-Marketing site for [Nudo Lab](https://nudolab.vercel.app), part of the WTD family.
+Marketing site for [Nudo Lab](https://www.nudo-lab.com). Designed in Tokyo, shipped worldwide from Singapore.
 
 ---
 

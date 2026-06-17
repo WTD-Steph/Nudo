@@ -13,14 +13,19 @@ export const metadata = {
 
 const FAQ = [
   {
+    question: "Where do you ship from?",
+    answer:
+      "From our fulfilment partner in Singapore — every order, every region. Designed in Tokyo, packed and shipped from SG.",
+  },
+  {
     question: "How long does shipping take?",
     answer:
-      "Domestic (Indonesia): 2–4 business days. International: 7–14 business days, customs depending. We ship within 48 hours of order confirmation.",
+      "Singapore: 1–2 business days. Southeast Asia: 3–5 business days. Asia-Pacific (JP, KR, HK, AU): 5–8 business days. Rest of world: 8–14 business days. We ship within 48 hours of order confirmation.",
   },
   {
     question: "What's the return policy?",
     answer:
-      "30 days, no questions asked, for anything you can repack. We'll send you a prepaid label for domestic returns; international returns are at-cost.",
+      "30 days, no questions asked, for anything you can repack. Returns within Singapore are at our cost; international returns are at-cost — but in most cases we'd rather send a replacement than process a return.",
   },
   {
     question: "What if it arrives broken?",
@@ -28,9 +33,9 @@ const FAQ = [
       "Email us a photo. We send a replacement within 24 hours and don't ask you to return the broken one. This is the policy because we've broken enough sharing pots ourselves to know.",
   },
   {
-    question: "Do you ship internationally?",
+    question: "Duties and taxes?",
     answer:
-      "Yes. Duties and taxes are paid by the recipient — we don't mark items as gifts to dodge customs (and you shouldn't either; it bites you later).",
+      "Paid by the recipient on import. We don't mark items as gifts to dodge customs (and you shouldn't either; it bites you later).",
   },
 ];
 
@@ -63,9 +68,9 @@ export default function ShippingPage() {
               Shipping &amp; returns, in plain English.
             </h1>
             <p className="mt-5 max-w-[640px] text-[18px] leading-snug text-ink/70">
-              The short version: free shipping over $40, 30-day no-questions
-              returns, replacements when stuff breaks. The longer version
-              below.
+              We ship worldwide from our fulfilment partner in Singapore. The
+              short version: free over $40, 30-day no-questions returns,
+              replacements when stuff breaks. The longer version below.
             </p>
           </div>
         </section>
@@ -132,23 +137,33 @@ export default function ShippingPage() {
                 </thead>
                 <tbody className="text-[15px]">
                   <tr className="border-t border-rule-cream">
-                    <td className="p-4 font-medium">Indonesia · Jakarta</td>
+                    <td className="p-4 font-medium">Singapore</td>
                     <td className="p-4">1–2 business days</td>
-                    <td className="p-4">From Rp 25,000</td>
+                    <td className="p-4">From S$5</td>
                   </tr>
                   <tr className="border-t border-rule-cream">
-                    <td className="p-4 font-medium">Indonesia · other</td>
-                    <td className="p-4">2–4 business days</td>
-                    <td className="p-4">From Rp 35,000</td>
+                    <td className="p-4 font-medium">
+                      Southeast Asia
+                      <small className="block text-[12px] text-ink/60">
+                        MY · TH · ID · VN · PH
+                      </small>
+                    </td>
+                    <td className="p-4">3–5 business days</td>
+                    <td className="p-4">From $9</td>
                   </tr>
                   <tr className="border-t border-rule-cream">
-                    <td className="p-4 font-medium">SEA · regional</td>
-                    <td className="p-4">5–10 business days</td>
+                    <td className="p-4 font-medium">
+                      Asia-Pacific
+                      <small className="block text-[12px] text-ink/60">
+                        JP · KR · HK · TW · AU · NZ
+                      </small>
+                    </td>
+                    <td className="p-4">5–8 business days</td>
                     <td className="p-4">From $15</td>
                   </tr>
                   <tr className="border-t border-rule-cream">
                     <td className="p-4 font-medium">Rest of world</td>
-                    <td className="p-4">7–14 business days</td>
+                    <td className="p-4">8–14 business days</td>
                     <td className="p-4">From $25</td>
                   </tr>
                 </tbody>
