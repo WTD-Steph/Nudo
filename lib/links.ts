@@ -30,6 +30,14 @@ export const ROUTES = {
   trackOrder: "/help/track-order",
   contact: "/help/contact",
   signIn: "/account/sign-in",
+  signOut: "/auth/sign-out",
+  account: "/account",
+  myJournal: "/account/journal",
+  newBrew: "/account/journal/new",
+  brew: (id: string) => `/account/journal/${id}`,
+  beans: "/account/journal/beans",
+  newBean: "/account/journal/beans/new",
+  bean: (id: string) => `/account/journal/beans/${id}`,
   cart: "/cart",
 } as const;
 
