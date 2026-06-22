@@ -8,9 +8,17 @@ import { type Database } from "@/types/database";
 export async function updateSession(request: NextRequest) {
   let response = NextResponse.next({ request });
 
+  // Graceful fallback: when Supabase env vars aren't configured (e.g. a
+  // Vercel deploy without the secrets), pass the request through unchanged
+  // instead of throwing a 500 on every route. Auth-gated pages will surface
+  // their own "not signed in" state; the public marketing site keeps working.
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  if (!url || !anonKey) return response;
+
   const supabase = createServerClient<Database>(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    url,
+    anonKey,
     {
       cookies: {
         getAll() {
