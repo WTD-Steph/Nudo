@@ -1,13 +1,13 @@
 // Single source of truth for the product catalog.
-// Phase 1 keeps this in TypeScript — simpler than MDX for 11 SKUs.
-// When real e-commerce ships, replace with a Shopify / CMS fetch.
+// V2 lineup (June 2026) — the photographed product family:
+// 3 scales · 2 dosing scoops · 2 tamping mats · sharing pot · pour-over
+// stand · vacuum jar · milk jug · prism rocks glass.
 
 export type Category =
   | "espresso"
   | "pour-over"
   | "scales"
-  | "accessories"
-  | "drip-bags";
+  | "accessories";
 
 export type ProductTag = {
   label: string;
@@ -16,13 +16,8 @@ export type ProductTag = {
 
 export type ProductSpec = { label: string; value: string };
 
-export type SensoryIcon = {
-  symbol: string; // unicode glyph, used as the icon
-  label: string;
-};
-
+export type SensoryIcon = { symbol: string; label: string };
 export type HowToStep = string;
-
 export type ColorOption = { name: string; swatch: string };
 
 export type Product = {
@@ -35,308 +30,329 @@ export type Product = {
   was?: string;
   tag?: ProductTag;
   image: string; // hero image — already in /public/products/
-  gallery?: string[]; // additional images
-  silhouette?: "sensory-cup" | "drip-bag"; // missing-photo fallback
+  gallery?: string[];
+  silhouette?: "sensory-cup" | "drip-bag"; // missing-photo fallback (unused in V2; kept for type back-compat)
   category: Category;
   specs: ProductSpec[];
   useFor: string[];
   honestExpectations: string;
   crossSell: string[]; // slugs
-  placeholder?: boolean;
+  placeholder?: boolean; // true while specs are unconfirmed by founder
 
-  // Optional special-treatment fields (currently used by Sensory Cup).
+  // Optional special-treatment fields (unused in V2; kept for type back-compat)
   sensoryIcons?: SensoryIcon[];
   howToEnjoy?: HowToStep[];
   colors?: ColorOption[];
 };
 
 export const PRODUCTS: Product[] = [
+  // ── Scales ──────────────────────────────────────────────────────────
   {
-    slug: "dosing-cup",
-    name: "Espresso Dosing Cup",
-    jaSubtitle: "ドージングカップ",
-    desc: "Lightweight, clean transfers, consistent doses. Fits 58 mm portafilters.",
+    slug: "scale-cube",
+    name: "Smart Precision Scale · Cube",
+    jaSubtitle: "スマートスケール",
+    desc: "0.1 g precision in a clean white cube. Type-C rechargeable, built-in timer.",
     longDesc:
-      "The dosing cup that taught us most beginners don't have a dosing problem — they have a transfer problem. Coffee on the counter, coffee on the scale, coffee mostly in the basket. This solves that.",
-    price: "$18",
+      "The cheapest, biggest single upgrade in home coffee. Same beans, same grind, same weight in — and suddenly your coffee tastes the same on Tuesday as it did on Saturday. A scale is the thing that takes guessing out of the loop.",
+    price: "$38",
     tag: { label: "Bestseller", kind: "bestseller" },
-    image: "/products/dosing-cup.png",
-    category: "espresso",
+    image: "/products/scale-cube.png",
+    category: "scales",
+    placeholder: true,
     specs: [
-      { label: "Material", value: "Borosilicate glass" },
-      { label: "Fits", value: "58 mm portafilter" },
-      { label: "Capacity", value: "70 ml" },
-      { label: "In the box", value: "Dosing cup" },
+      { label: "Precision", value: "0.1 g" },
+      { label: "Capacity", value: "2 kg" },
+      { label: "Charging", value: "USB-C" },
+      { label: "Timer", value: "Built-in, auto-start on weight" },
+      { label: "Finish", value: "White" },
     ],
     useFor: [
-      "Transferring grounds from grinder to portafilter without spilling.",
-      "Weighing your dose on a scale before the puck stage.",
+      "Weighing your dose before brewing.",
+      "Tracking shot weight and time together for consistent results.",
     ],
     honestExpectations:
-      "It won't make your grind any better. It will stop you blaming your coffee for what was actually a transfer mess.",
-    crossSell: ["distributor", "scale-mini", "tamping-mat"],
+      "It won't make a bad bean taste good. But it will make your good bean taste the same every time.",
+    crossSell: ["dosing-scoop", "tamping-mat", "sharing-pot"],
   },
   {
-    slug: "distributor",
-    name: "Gravity Leveler & Distributor",
-    jaSubtitle: "ディストリビューター",
-    desc: "Spring-loaded, eight pins. Levels the bed before tamping — fewer channeling problems.",
+    slug: "scale-lite",
+    name: "Essential Scale · Lite",
+    jaSubtitle: "ライトスケール",
+    desc: "The entry scale. 0.1 g precision, fewer buttons, lower price.",
     longDesc:
-      "Eight thin needles stir the bed so water can't take a shortcut. Spring-loaded so you can't tamp too hard by accident. This is the tool that fixed the most beginner-shot problems we've watched in our studio.",
+      "Everything you need on a scale, nothing you don't. The Lite is what we hand a friend who's still deciding whether they want to be a coffee person. By the time they outgrow it, they've already figured out it was worth it.",
     price: "$24",
-    tag: { label: "New", kind: "new" },
-    image: "/products/distributor.png",
-    category: "espresso",
+    image: "/products/scale-lite.png",
+    category: "scales",
+    placeholder: true,
     specs: [
-      { label: "Material", value: "Stainless steel + walnut handle" },
-      { label: "Fits", value: "58 mm baskets" },
-      { label: "Pins", value: "8" },
-      { label: "Mechanism", value: "Spring-loaded, fixed depth" },
+      { label: "Precision", value: "0.1 g" },
+      { label: "Capacity", value: "2 kg" },
+      { label: "Charging", value: "USB-C" },
+      { label: "Finish", value: "White" },
     ],
     useFor: [
-      "Breaking up grind clumps before tamping.",
-      "Setting an even bed so water flows evenly.",
+      "A first scale that won't make you feel underqualified.",
+      "Pour-over weighing — the simplest of all scale tasks.",
     ],
     honestExpectations:
-      "It won't fix a wildly wrong grind. It will stop you from blaming your tamping when the real culprit was an uneven bed.",
-    crossSell: ["dosing-cup", "portafilter-basket", "tamping-mat"],
+      "No flow-rate display, no app, no Bluetooth. If you want those, the Round is for you.",
+    crossSell: ["dosing-scoop", "sharing-pot", "pour-over-stand"],
   },
   {
-    slug: "portafilter-basket",
-    name: "Ultra Precision Basket",
-    jaSubtitle: "バスケット",
-    desc: "58 mm stainless basket, 17–19 g. Even extraction, even on entry-level machines.",
+    slug: "scale-round",
+    name: "Professional Scale · Round",
+    jaSubtitle: "プロフェッショナル",
+    desc: "Bigger surface, faster refresh, for the day you start watching flow rate.",
     longDesc:
-      "The stock basket on most home machines is the cheapest part of the machine — and it shows. This is a properly machined replacement with consistent hole spacing. It does for your shot what a flat bed does for sleep.",
-    price: "$28",
-    image: "/products/portafilter-basket.png",
-    category: "espresso",
+      "The Round is what you graduate to when your shot timing matters more than your shot weight, and when you're putting a portafilter on top of the scale instead of just a cup. Bigger surface, faster refresh — built for the espresso bar at home.",
+    price: "$58",
+    image: "/products/scale-round.png",
+    category: "scales",
+    placeholder: true,
     specs: [
-      { label: "Material", value: "Stainless steel" },
-      { label: "Diameter", value: "58 mm" },
-      { label: "Dose range", value: "17–19 g" },
-      { label: "Hole pattern", value: "Precision-laser drilled" },
+      { label: "Precision", value: "0.1 g" },
+      { label: "Capacity", value: "3 kg" },
+      { label: "Refresh", value: "Fast (suitable for flow tracking)" },
+      { label: "Charging", value: "USB-C" },
+      { label: "Finish", value: "Round, brushed" },
     ],
     useFor: [
-      "Upgrading from a stock basket on an entry-level espresso machine.",
-      "Pulling a more even shot at the same dose and grind.",
+      "Espresso flow tracking — when you can see the slow-then-fast-then-slow shape of a good extraction.",
+      "Larger pour-overs (1L+) that won't fit on a small scale.",
     ],
     honestExpectations:
-      "It won't make a bad machine good. It will close most of the gap between an entry-level machine and a midrange one.",
-    crossSell: ["distributor", "dosing-cup", "scale-mini"],
+      "Overkill for your first month. Probably right by month three.",
+    crossSell: ["tamping-mat-pro", "milk-jug", "vacuum-jar"],
   },
+
+  // ── Dosing scoops ──────────────────────────────────────────────────
+  {
+    slug: "dosing-scoop",
+    name: "Bean Dosing Scoop · 15 ml",
+    jaSubtitle: "ドージングスクープ",
+    desc: "Stainless 304, satisfying weight. The grinder-to-portafilter transfer, fixed.",
+    longDesc:
+      "Solves the problem nobody warns you about: half your dose ends up on the counter when you transfer from the grinder. The scoop gives the beans somewhere to land, your hand somewhere to hold, and the basket a clean pour.",
+    price: "$14",
+    tag: { label: "Bestseller", kind: "bestseller" },
+    image: "/products/dosing-scoop.png",
+    category: "accessories",
+    placeholder: true,
+    specs: [
+      { label: "Material", value: "Stainless steel 304" },
+      { label: "Capacity", value: "15 ml" },
+      { label: "Finish", value: "Brushed" },
+    ],
+    useFor: [
+      "Transferring beans from grinder to portafilter without spilling.",
+      "Single-dosing — weigh in the scoop, grind, dose.",
+    ],
+    honestExpectations:
+      "Won't fix a grind problem. Will stop you blaming your beans for what was actually a transfer mess.",
+    crossSell: ["scale-cube", "tamping-mat", "vacuum-jar"],
+  },
+  {
+    slug: "dosing-scoop-white",
+    name: "Bean Dosing Scoop · White",
+    desc: "Same scoop, white finish. For the white-and-wood kitchen.",
+    longDesc:
+      "Identical to the brushed scoop in every measurable way; if you've already chosen white for the rest of your gear, this is the version that doesn't fight it.",
+    price: "$14",
+    image: "/products/dosing-scoop-white.png",
+    category: "accessories",
+    placeholder: true,
+    specs: [
+      { label: "Material", value: "Stainless steel 304, white powder coat" },
+      { label: "Capacity", value: "15 ml" },
+    ],
+    useFor: [
+      "Bean transfer in a setup where brushed steel doesn't fit.",
+    ],
+    honestExpectations:
+      "It's a finish choice. The coffee won't notice.",
+    crossSell: ["scale-lite", "milk-jug", "rocks-glass"],
+  },
+
+  // ── Tamping mats ────────────────────────────────────────────────────
   {
     slug: "tamping-mat",
-    name: "Silicone Tamping Mat",
-    desc: "Saves your wrist and your counter. Knock-friendly, dishwasher safe.",
+    name: "Silicone Tamping Mat · Minimalist",
+    jaSubtitle: "タンピングマット",
+    desc: "Soft enough to be friendly, stiff enough to be flat. Saves your wrist and your counter.",
     longDesc:
-      "The thing you didn't know you needed until you tamped on a granite countertop and felt the shockwave in your shoulder. Soft enough to be friendly. Stiff enough to be flat.",
-    price: "$22",
+      "The thing you didn't know you needed until you tamped on a granite countertop and felt the shockwave in your shoulder. Knock-friendly, food-safe silicone. Pure black, no logo, no shine — the minimalist version.",
+    price: "$18",
     image: "/products/tamping-mat.png",
     category: "accessories",
     specs: [
       { label: "Material", value: "Food-grade silicone" },
       { label: "Size", value: "200 × 150 mm" },
+      { label: "Finish", value: "Matte black" },
       { label: "Care", value: "Dishwasher safe" },
     ],
     useFor: [
       "Tamping without rattling your counter or your wrist.",
       "Knocking your portafilter clean before rinsing.",
     ],
-    honestExpectations: "It's a mat. It will not improve your coffee. It will improve your kitchen.",
-    crossSell: ["distributor", "milk-jug", "dosing-cup"],
+    honestExpectations:
+      "It's a mat. It will not improve your coffee. It will improve your kitchen.",
+    crossSell: ["dosing-scoop", "scale-cube", "milk-jug"],
   },
   {
-    slug: "scale-mini",
-    name: "Halo Mini Coffee Scale",
-    jaSubtitle: "ハロミニ・スケール",
-    desc: "0.1 g precision, Type-C rechargeable. The thing that fixes your inconsistent brews.",
+    slug: "tamping-mat-pro",
+    name: "Silicone Tamping Mat · Pro",
+    desc: "Heavier, thicker, more grip. Available in Pro Black & Pro Grey.",
     longDesc:
-      "If you only buy one thing from us, buy this. Same beans, same grind, same weight in — and suddenly your coffee tastes the same on Tuesday as it did on Saturday. A scale is the cheapest, biggest single upgrade in home coffee.",
-    price: "$32",
-    tag: { label: "Bestseller", kind: "bestseller" },
-    image: "/products/scale-mini.png",
-    category: "scales",
+      "The Pro is the same mat, denser. More weight, less slide, slightly more grip on the portafilter ear. Comes in Pro Black or Pro Grey — both look right next to a chrome machine.",
+    price: "$24",
+    image: "/products/tamping-mat-pro.png",
+    category: "accessories",
+    placeholder: true,
     specs: [
-      { label: "Precision", value: "0.1 g" },
-      { label: "Capacity", value: "2 kg" },
-      { label: "Charging", value: "USB-C, ~30 days per charge" },
-      { label: "Timer", value: "Built-in, auto-start on weight" },
+      { label: "Material", value: "Food-grade silicone (denser blend)" },
+      { label: "Size", value: "220 × 160 mm" },
+      { label: "Finish", value: "Pro Black or Pro Grey" },
     ],
     useFor: [
-      "Weighing your dose before brewing.",
-      "Tracking your shot's weight and time together for consistent results.",
+      "Heavier daily use where the Minimalist mat moves around.",
+      "A slightly more permanent home for your portafilter between shots.",
     ],
     honestExpectations:
-      "It won't make a bad bean taste good. But it will make your good bean taste the same every time.",
-    crossSell: ["dosing-cup", "distributor", "portable-dripper"],
+      "It's the Minimalist with more material. If you're already happy with the Minimalist, you don't need this.",
+    crossSell: ["scale-round", "milk-jug", "dosing-scoop"],
   },
-  {
-    slug: "portable-dripper",
-    name: "Portable V60 Dripper",
-    desc: "Stainless mesh, no paper needed. Pour-over anywhere — desk, camp, hotel room.",
-    longDesc:
-      "A pour-over cone that folds flat and never asks for filter paper. The mesh extracts a little more body than paper does, which sounds bad in theory and tastes fine in practice. Throw it in a bag.",
-    price: "$26",
-    tag: { label: "Easy", kind: "easy" },
-    image: "/products/portable-dripper.png",
-    category: "pour-over",
-    specs: [
-      { label: "Material", value: "Stainless mesh + silicone collar" },
-      { label: "Capacity", value: "1–2 cups" },
-      { label: "Folds", value: "Yes — fits in a pouch" },
-    ],
-    useFor: [
-      "Pour-over coffee without paper filters.",
-      "Travelling — desk, hotel, camping, in-laws.",
-    ],
-    honestExpectations:
-      "Mesh lets more oils through than paper, which makes the cup a touch heavier in body. Some people prefer it. If you don't, swap to our V60 paper drippers.",
-    crossSell: ["sharing-pot", "scale-mini", "drip-bags"],
-  },
+
+  // ── Pour-over ───────────────────────────────────────────────────────
   {
     slug: "sharing-pot",
-    name: "Sharing Pot Glass · 400 ml",
-    desc: "Heat-resistant glass server. Built to fit under a V60 and pour clean.",
+    name: "Sharing Pot Glass · 300 / 450 ml",
+    jaSubtitle: "シェアリングポット",
+    desc: "Borosilicate glass server. Two sizes. Built to fit under a V60 and pour clean.",
     longDesc:
-      "A small glass server that fits under a dripper, takes heat without complaining, and pours without a sad dribble down the side. Two cups, comfortable handle, looks good on a counter.",
-    price: "$24",
+      "A glass server that fits under your dripper, takes the heat, and pours without a sad dribble down the side. 300 ml for a single cup; 450 ml for two. We sell more 450s.",
+    price: "$22",
     image: "/products/sharing-pot.png",
     category: "pour-over",
     specs: [
-      { label: "Material", value: "Borosilicate glass + walnut handle" },
-      { label: "Capacity", value: "400 ml" },
-      { label: "Fits", value: "Most V60-style drippers" },
+      { label: "Material", value: "Borosilicate glass" },
+      { label: "Sizes", value: "300 ml · 450 ml" },
+      { label: "Care", value: "Hand wash" },
     ],
     useFor: [
-      "Brewing two cups of pour-over in one session.",
+      "Brewing pour-over for one or two cups.",
       "Serving filter coffee without it cooling on the counter.",
     ],
     honestExpectations:
       "Glass. Drop it on a tile floor and you'll know. We'll send a replacement once.",
-    crossSell: ["portable-dripper", "scale-mini", "storage-tube"],
+    crossSell: ["pour-over-stand", "scale-lite", "rocks-glass"],
+  },
+  {
+    slug: "pour-over-stand",
+    name: "Pour-Over Stand with Chilling Ball",
+    jaSubtitle: "ドリップスタンド",
+    desc: "Black powder-coated stand. Spiral dripper rail + a chilling ball for iced pours.",
+    longDesc:
+      "A height-adjustable stand with a spiral dripper rail, a chilling ball for over-the-ice pours, and a textured base that keeps it where you put it. Pour-over as a small ritual, on a counter you don't mind looking at.",
+    price: "$68",
+    tag: { label: "New", kind: "new" },
+    image: "/products/pour-over-stand.png",
+    category: "pour-over",
+    placeholder: true,
+    specs: [
+      { label: "Material", value: "Powder-coated steel, textured silicone base" },
+      { label: "Includes", value: "Chilling ball for iced pours" },
+      { label: "Height", value: "Adjustable" },
+      { label: "Finish", value: "Matte black" },
+    ],
+    useFor: [
+      "Pour-over with a built-in pour-into-the-server alignment.",
+      "Iced filter coffee — drip directly onto the chilling ball into ice.",
+    ],
+    honestExpectations:
+      "It won't teach you to pour. It will give you a fixed setup so you stop fiddling with cone height every brew.",
+    crossSell: ["sharing-pot", "scale-cube", "rocks-glass"],
+  },
+
+  // ── Storage / accessories ──────────────────────────────────────────
+  {
+    slug: "vacuum-jar",
+    name: "Stainless Vacuum Jar · 400 / 800 / 1200 ml",
+    jaSubtitle: "バキュームジャー",
+    desc: "Push-button vacuum seal. Three sizes. Beans that taste like yesterday's beans.",
+    longDesc:
+      "The push-button on top pulls a real vacuum, which is the only thing that actually slows the oxidation that makes coffee taste flat. Stainless body, blackout interior — beans stay dark.",
+    price: "$42",
+    image: "/products/vacuum-jar.png",
+    category: "accessories",
+    placeholder: true,
+    specs: [
+      { label: "Material", value: "Stainless steel" },
+      { label: "Sizes", value: "400 ml · 800 ml · 1200 ml" },
+      { label: "Seal", value: "Push-button vacuum" },
+    ],
+    useFor: [
+      "Storing the bag of beans you're drinking right now — vacuum-sealed.",
+      "Travelling with beans without a stale-in-three-days problem.",
+    ],
+    honestExpectations:
+      "Beans still go stale. Just slower. A vacuum jar buys you a week or two, not a month.",
+    crossSell: ["scale-cube", "dosing-scoop", "milk-jug"],
   },
   {
     slug: "milk-jug",
-    name: "Stainless Milk Jug",
-    desc: "Steam, swirl, pour. Comfortable handle, sharp spout, easy to clean.",
+    name: "Stainless Milk Jug · 500 ml",
+    jaSubtitle: "ミルクジャグ",
+    desc: "Steam, swirl, pour. Large 500 ml, sharp spout, easy to clean.",
     longDesc:
-      "A 350 ml stainless jug that pours clean and doesn't slip when your hand's wet from steam. Good spout geometry is the thing nobody talks about until they've used a bad one.",
-    price: "$19",
+      "A 500 ml stainless jug for the household where everyone wants a latte. Comfortable handle, sharp spout, polished interior that comes clean without help.",
+    price: "$24",
     image: "/products/milk-jug.png",
     category: "accessories",
     specs: [
       { label: "Material", value: "Stainless steel" },
-      { label: "Capacity", value: "350 ml" },
+      { label: "Capacity", value: "500 ml" },
       { label: "Spout", value: "Pointed for latte art" },
     ],
     useFor: [
-      "Steaming and pouring milk for cappuccinos and lattes.",
-      "Practicing latte art without splashing your machine.",
+      "Steaming and pouring milk for two drinks at once.",
+      "Practicing latte art without running out of milk halfway.",
     ],
     honestExpectations:
       "It won't teach you latte art. It will stop a bad jug being part of the reason you're struggling.",
-    crossSell: ["tamping-mat", "dosing-cup", "distributor"],
+    crossSell: ["tamping-mat", "scale-round", "rocks-glass"],
   },
   {
-    slug: "storage-tube",
-    name: "Coffee Storage Tubes",
-    desc: "Glass display set. See your beans, keep them fresh.",
+    slug: "rocks-glass",
+    name: "Prism Rocks Glass",
+    jaSubtitle: "プリズムグラス",
+    desc: "Hand-finished colored prism pattern. For coffee that deserves a deliberate cup.",
     longDesc:
-      "Six small glass tubes on a walnut tray. Decant 50–100 g into each — single-day quantities. The beans you're drinking now stay close; the rest stays sealed in the bag.",
-    price: "$36",
-    image: "/products/storage-tube.png",
-    category: "accessories",
-    specs: [
-      { label: "Material", value: "Borosilicate glass + walnut tray" },
-      { label: "Capacity", value: "6 × ~100 g" },
-      { label: "Care", value: "Hand wash glass" },
-    ],
-    useFor: [
-      "Keeping a single-day amount of beans on the counter without compromising the rest.",
-      "Showing off a small bean library to friends who definitely wanted to know.",
-    ],
-    honestExpectations:
-      "Decanted beans stay fresh for a day or two. Don't fill all six and forget about them — that's a slow road to stale.",
-    crossSell: ["sharing-pot", "scale-mini", "milk-jug"],
-  },
-  {
-    slug: "sensory-cup",
-    name: "Sensory Cup",
-    jaSubtitle: "感覚カップ",
-    desc: "Tulip-shaped porcelain. Made to help you actually taste what you're brewing.",
-    longDesc:
-      "A small porcelain cup with a deliberate tulip shape — wider at the middle, narrower at the rim — that concentrates aroma at your nose as you sip. No handle, because you should feel the temperature of the coffee in your palm. It's a cup designed for one job: making it easier to tell the difference between two shots.",
-    price: "$14",
-    image: "/brand/sticker-cover.png", // placeholder — real photography missing
-    silhouette: "sensory-cup",
+      "A short rocks glass with a colored prism pattern that catches light differently every time you set it down. Built for cold brew, an espresso tonic, an iced filter — anything you'd rather not pour into a mug.",
+    price: "$18",
+    tag: { label: "New", kind: "new" },
+    image: "/products/rocks-glass.png",
     category: "accessories",
     placeholder: true,
     specs: [
-      { label: "Material", value: "Porcelain" },
-      { label: "Capacity", value: "360 ml" },
-      { label: "Weight", value: "±350 g" },
-      { label: "Available in", value: "White · Pink · Transparent" },
+      { label: "Material", value: "Hand-finished glass" },
+      { label: "Capacity", value: "~260 ml" },
+      { label: "Care", value: "Hand wash" },
     ],
     useFor: [
-      "Tasting coffee deliberately — noticing aroma, acidity, body.",
-      "Side-by-side comparisons when you're dialling in a new bean.",
+      "Iced coffee, cold brew, espresso tonics.",
+      "Tasting deliberately — when the cup is part of the moment.",
     ],
     honestExpectations:
-      "It won't change what your coffee tastes like. It will change how easy it is to notice. That's the whole point.",
-    crossSell: ["scale-mini", "portable-dripper", "sharing-pot"],
-    sensoryIcons: [
-      { symbol: "✦", label: "Aroma concentration" },
-      { symbol: "◐", label: "Temperature sensitivity" },
-      { symbol: "◉", label: "Flavor control" },
-      { symbol: "◯", label: "Handle-less design" },
-    ],
-    howToEnjoy: [
-      "Pour your coffee into the cup to activate its aroma.",
-      "Feel the temperature in your hands.",
-      "Use the rim to direct the liquid toward the center of your palate for a fuller taste.",
-      "Sip slowly and enjoy the experience.",
-    ],
-    colors: [
-      { name: "White", swatch: "#FDF8DE" },
-      { name: "Pink", swatch: "#E8C9B8" },
-      { name: "Transparent", swatch: "#E8E4D4" },
-    ],
-  },
-  {
-    slug: "drip-bags",
-    name: "Non-Woven Drip Bags",
-    jaSubtitle: "ドリップバッグ",
-    desc: "Just add water. The easiest pour-over you'll ever make.",
-    longDesc:
-      "Single-serve drip bags — pre-ground, sealed, ready. Hook over a mug, pour hot water slowly, drink. The result is a clean filter coffee with no equipment. We sell them as a starting point — a way to taste good coffee at home before you commit to the gear.",
-    price: "$12",
-    tag: { label: "Easy", kind: "easy" },
-    image: "/brand/sticker-cover.png", // placeholder — real photography missing
-    silhouette: "drip-bag",
-    category: "drip-bags",
-    placeholder: true,
-    specs: [
-      { label: "Format", value: "Non-woven (food-grade)" },
-      { label: "Count", value: "8 bags per box" },
-      { label: "Brew", value: "200 ml per bag, 90 °C water, ~3 min" },
-    ],
-    useFor: [
-      "Pour-over coffee with no equipment.",
-      "Travel, the office, or as a low-commitment way to try a new bean.",
-    ],
-    honestExpectations:
-      "Drip bags are a starting point, not a destination. When you start tasting the difference between two bags, you're ready for a proper dripper.",
-    crossSell: ["portable-dripper", "sharing-pot", "scale-mini"],
+      "Hand-finished glass. Each one's pattern is slightly different — that's the point, but tell us if you want a refund instead.",
+    crossSell: ["sharing-pot", "pour-over-stand", "vacuum-jar"],
   },
 ];
 
 export const CATEGORIES: { key: Category | "all"; label: string }[] = [
   { key: "all", label: "All" },
-  { key: "espresso", label: "Espresso" },
-  { key: "pour-over", label: "Pour-over" },
-  { key: "drip-bags", label: "Drip bags" },
   { key: "scales", label: "Scales" },
+  { key: "pour-over", label: "Pour-over" },
   { key: "accessories", label: "Accessories" },
 ];
 

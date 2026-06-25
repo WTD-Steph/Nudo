@@ -27,11 +27,15 @@ export default function Post() {
         or take any of it seriously.
       </p>
 
-      <h2>Start with drip bags. Not anything else.</h2>
+      <h2>Start with a $4 dripper. Not anything else.</h2>
       <p>
-        A drip bag is pre-ground coffee in a small paper pouch with
-        a folding hook on top. You tear it open, hook it over your
-        mug, pour hot water through it slowly, drink. It takes the
+        Walk into any supermarket and buy the cheapest plastic V60-style
+        cone you can find. Three or four dollars. A pack of paper
+        filters next to it. That&rsquo;s the start of pour-over.
+      </p>
+      <p>
+        Hook the cone over your mug, drop a filter in, scoop coffee
+        in, pour hot water through it slowly, drink. It takes the
         same amount of time as instant — maybe an extra 90 seconds.
       </p>
       <p>
@@ -40,40 +44,35 @@ export default function Post() {
         more acidic, which sounds bad in theory and is mostly fine
         in practice.
       </p>
-      <ul>
-        <li>
-          <span aria-hidden /> The product:{" "}
-          <ProductChip slug="drip-bags">Non-Woven Drip Bags</ProductChip>{" "}
-          (8 per box).
-        </li>
-      </ul>
 
       <h2>What changes</h2>
       <p>
-        For about a week, drink one drip bag a day and one instant a
+        For about a week, drink one pour-over a day and one instant a
         day. Don&rsquo;t commit to anything. Don&rsquo;t learn any
         vocabulary. Just drink both and notice.
       </p>
       <p>
-        Most people start preferring the drip bag without ever
+        Most people start preferring the pour-over without ever
         deciding to. That&rsquo;s the moment to think about a small
         upgrade.
       </p>
 
       <h2>If you want to upgrade after that</h2>
       <p>
-        The cheapest upgrade is a Portable V60 + a kettle. The
-        portable dripper folds flat and uses no paper filters; the
-        kettle can be any electric kettle you already own (a
-        gooseneck makes it easier but isn&rsquo;t required at this
-        stage).
+        The first thing that&rsquo;s worth spending money on is a
+        scale. The{" "}
+        <ProductChip slug="scale-lite">Essential Scale · Lite</ProductChip>{" "}
+        is what we&rsquo;d hand you — 0.1 g precision, no Bluetooth, no
+        nonsense, and just enough timer to keep you honest.
       </p>
-      <ul>
-        <li>
-          <span aria-hidden /> Total cost of the upgrade:{" "}
-          <ProductChip slug="portable-dripper">$26</ProductChip>.
-        </li>
-      </ul>
+      <p>
+        The next thing — once you know you want this to look as good
+        as it tastes — is a{" "}
+        <ProductChip slug="sharing-pot">Sharing Pot</ProductChip> to
+        catch the brew, and eventually a{" "}
+        <ProductChip slug="pour-over-stand">Pour-Over Stand</ProductChip>{" "}
+        that holds the dripper at the right height every time.
+      </p>
 
       <h2>What we&rsquo;re not going to tell you</h2>
       <p>

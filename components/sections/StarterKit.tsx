@@ -3,10 +3,10 @@ import Link from "next/link";
 import { ROUTES } from "@/lib/links";
 
 const ITEMS = [
-  { nm: "Dosing Cup", meta: "58 mm", img: "/products/dosing-cup-funnel.png" },
-  { nm: "Distributor", meta: "8 pin", img: "/products/distributor.png" },
-  { nm: "Tamping Mat", meta: "Silicone", img: "/products/tamping-mat.png" },
-  { nm: "Halo Mini Scale", meta: "0.1 g", img: "/products/scale-mini.png" },
+  { nm: "Dosing Scoop", meta: "15 ml · Stainless 304", img: "/products/dosing-scoop.png" },
+  { nm: "Tamping Mat", meta: "Minimalist · Silicone", img: "/products/tamping-mat.png" },
+  { nm: "Smart Scale", meta: "0.1 g · Cube White", img: "/products/scale-cube.png" },
+  { nm: "Sharing Pot", meta: "Glass · 300 / 450 ml", img: "/products/sharing-pot.png" },
 ];
 
 export function StarterKit() {

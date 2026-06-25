@@ -99,7 +99,7 @@ export default function FirstBrewGuide() {
         <li>
           <span aria-hidden /> A scale that measures to{" "}
           <strong>0.1 g</strong> precision. Ours is the{" "}
-          <ProductChip slug="scale-mini" />, but anything in this range works.
+          <ProductChip slug="scale-cube" />, but anything in this range works.
         </li>
         <li>
           <span aria-hidden /> A <Term slug="dose">dose</Term> you can repeat. For
@@ -122,11 +122,11 @@ export default function FirstBrewGuide() {
 
       <h3>If you&rsquo;re making espresso</h3>
       <p>
-        Grind your <Term slug="dose">dose</Term> into a{" "}
-        <Term slug="dosing-cup">dosing cup</Term> (or straight into the
-        portafilter, but the cup is cleaner). Use a{" "}
-        <Term slug="wdt">WDT</Term> tool to stir the bed — this breaks up
-        the clumps that come out of any grinder, no matter how fancy.
+        Grind your <Term slug="dose">dose</Term> using a{" "}
+        <Term slug="dosing-cup">dosing scoop</Term> (or straight into the
+        portafilter, but the scoop is cleaner). Stir the bed with any
+        thin pin — the <Term slug="wdt">WDT</Term> technique — to break
+        up the clumps that come out of any grinder, no matter how fancy.
         Then tamp until the puck stops moving.{" "}
         <Term slug="channeling">Channeling</Term> — water finding the easy
         way out — is the most common cause of bad shots, and you just
@@ -134,11 +134,11 @@ export default function FirstBrewGuide() {
       </p>
       <ul>
         <li>
-          <span aria-hidden /> WDT tool / <Term slug="distribution">distributor</Term>:{" "}
-          <ProductChip slug="distributor" />
+          <span aria-hidden /> Dosing scoop: <ProductChip slug="dosing-scoop" />
         </li>
         <li>
-          <span aria-hidden /> Dosing cup: <ProductChip slug="dosing-cup" />
+          <span aria-hidden /> Tamping mat:{" "}
+          <ProductChip slug="tamping-mat">Tamping mat</ProductChip>
         </li>
       </ul>
 
@@ -159,10 +159,9 @@ export default function FirstBrewGuide() {
       <h2>Step 03 — Taste before you tweak</h2>
       <p>
         Pour what you just made into something you can taste from. The{" "}
-        <ProductChip slug="sensory-cup" /> is built for this — a tulip
-        shape concentrates aroma at your nose, and the lack of a handle
-        means you feel the temperature in your palm. Any small cup
-        works, but a deliberate one helps you notice.
+        <ProductChip slug="rocks-glass" /> is what we use — short, glass,
+        and noticeably different from a mug; you taste with your eyes too.
+        Any small cup works, but a deliberate one helps you notice.
       </p>
       <p>
         Sip slowly. You&rsquo;re looking for one of three things:

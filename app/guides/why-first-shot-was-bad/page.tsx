@@ -43,7 +43,13 @@ export default function WhyFirstShotWasBadPage() {
       <ul>
         <li>
           <span aria-hidden />{" "}
-          <ProductChip slug="scale-mini">Halo Mini Scale</ProductChip>
+          <ProductChip slug="scale-cube">Smart Precision Scale · Cube</ProductChip>
+        </li>
+        <li>
+          <span aria-hidden />{" "}
+          <ProductChip slug="dosing-scoop">Bean Dosing Scoop</ProductChip>{" "}
+          — for the transfer step that scooping with a tablespoon
+          actually breaks.
         </li>
       </ul>
 
@@ -56,15 +62,10 @@ export default function WhyFirstShotWasBadPage() {
         <em>and</em> harsh at once, which is the giveaway.
       </p>
       <p>
-        Fix: <Term slug="wdt">WDT</Term> the bed before tamping. Eight
-        thin pins, ten seconds of stirring. It really is that simple.
+        Fix: <Term slug="wdt">WDT</Term> the bed before tamping — any
+        thin pin or distribution tool will do. Eight thin needles, ten
+        seconds of stirring. It really is that simple.
       </p>
-      <ul>
-        <li>
-          <span aria-hidden />{" "}
-          <ProductChip slug="distributor">Gravity Leveler &amp; Distributor</ProductChip>
-        </li>
-      </ul>
 
       <h2>3 · The grind was wrong</h2>
       <p>
@@ -88,9 +89,9 @@ export default function WhyFirstShotWasBadPage() {
         <Term slug="headspace">headspace</Term> and the puck will deform.
       </p>
       <p>
-        Fix: upgrade to a precision basket. The{" "}
-        <ProductChip slug="portafilter-basket">Ultra Precision Basket</ProductChip>{" "}
-        takes 17&ndash;19 g and has properly drilled holes.
+        Fix: upgrade to a precision basket. We don&rsquo;t sell one
+        ourselves yet — IMS and VST both make 58 mm baskets in the
+        17&ndash;19 g range that work well on most home machines.
       </p>
 
       <h2>5 · The beans were old</h2>
@@ -108,9 +109,9 @@ export default function WhyFirstShotWasBadPage() {
       <ul>
         <li>
           <span aria-hidden />{" "}
-          <ProductChip slug="storage-tube">Coffee Storage Tubes</ProductChip>{" "}
-          for keeping the beans you&rsquo;re drinking now close — and the
-          rest sealed.
+          <ProductChip slug="vacuum-jar">Stainless Vacuum Jar</ProductChip>{" "}
+          for slowing the inevitable. A vacuum buys you a week or two,
+          not a month.
         </li>
       </ul>
 

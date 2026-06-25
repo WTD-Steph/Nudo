@@ -38,8 +38,8 @@ export function Hero() {
       </div>
       <div className="relative aspect-[4/5] overflow-hidden rounded-[28px] bg-sand">
         <Image
-          src="/products/dosing-cup.png"
-          alt="Nudo first-brew kit"
+          src="/products/pour-over-stand.png"
+          alt="Nudo Pour-Over Stand with Chilling Ball"
           fill
           sizes="(max-width: 1024px) 100vw, 540px"
           priority
@@ -49,8 +49,8 @@ export function Hero() {
           For every first brews
         </span>
         <div className="absolute inset-x-[22px] bottom-[22px] flex items-center justify-between rounded-full bg-cream/95 px-3.5 py-2.5 font-mono text-[11px] uppercase tracking-widest text-ink backdrop-blur">
-          <span>First-Brew Kit</span>
-          <b className="font-bold">NL-001</b>
+          <span>Pour-Over Stand</span>
+          <b className="font-bold">NL-009</b>
         </div>
       </div>
     </section>

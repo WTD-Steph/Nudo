@@ -14,21 +14,19 @@ import { ROUTES } from "@/lib/links";
 export const metadata = {
   title: "Shop",
   description:
-    "Friendly brewing tools for beginners. Espresso, pour-over, drip bags, scales, and accessories — picked for people who are just starting out.",
+    "Friendly brewing tools for beginners. Scales, pour-over, and the accessories that make the rest feel finished.",
 };
 
 const CATEGORY_BLURB: Record<Category | "all", string> = {
   all: "Every Nudo piece is the one we'd hand a friend on their first day. Tested, reliable, not overbuilt.",
   espresso:
-    "Everything you need to pull an honest shot at home. We sell only the things we think you'll actually use.",
+    "Everything you need to pull an honest shot at home — minus the bits you don't.",
   "pour-over":
-    "Filter coffee, demystified. From single-serve drip bags to a proper V60 setup.",
-  "drip-bags":
-    "Single-serve pour-over with zero equipment. The lowest-stakes way to try good coffee at home.",
+    "Filter coffee, demystified. A stand that keeps your dripper aligned, a pot that pours clean.",
   scales:
-    "The cheapest, biggest single upgrade in home coffee. We sell two — both 0.1g, both Type-C.",
+    "The cheapest, biggest single upgrade in home coffee. We sell three — Lite, Cube, and Round.",
   accessories:
-    "The small things that make the rest of your setup feel finished. Mats, jugs, storage.",
+    "The small things that make the rest of your setup feel finished. Mats, jugs, scoops, the storage that slows down stale.",
 };
 
 type SearchParams = { category?: string };

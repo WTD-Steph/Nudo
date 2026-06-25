@@ -40,9 +40,8 @@ export default function CarePage() {
         <li>
           <span aria-hidden /> Knock the puck out of the portafilter and
           rinse the basket under hot water. If a puck is sloppy or
-          cracked, fix it tomorrow (see the{" "}
-          <ProductChip slug="distributor">Gravity Leveler &amp; Distributor</ProductChip>
-          ).
+          cracked, fix it tomorrow — start with distribution before you
+          tamp.
         </li>
         <li>
           <span aria-hidden /> Run a blank shot — water with no coffee —
@@ -115,27 +114,28 @@ export default function CarePage() {
       <ul>
         <li>
           <span aria-hidden /> The{" "}
-          <ProductChip slug="portable-dripper">Portable V60</ProductChip>{" "}
+          <ProductChip slug="pour-over-stand">Pour-Over Stand</ProductChip>{" "}
           and the{" "}
           <ProductChip slug="sharing-pot">Sharing Pot</ProductChip>{" "}
-          want hot water and a soft sponge after each use. Skip the
-          dishwasher — heat cycles aren&rsquo;t kind to walnut handles.
+          want hot water and a soft sponge after each use. The stand is
+          powder-coated — skip abrasive sponges. The pot is glass; if it
+          stains, white vinegar overnight clears it.
         </li>
         <li>
           <span aria-hidden /> The{" "}
-          <ProductChip slug="storage-tube">Storage Tubes</ProductChip>{" "}
+          <ProductChip slug="vacuum-jar">Vacuum Jar</ProductChip>{" "}
           should be hand-washed every couple of weeks. Coffee oils film
-          the inside; the beans still taste fine but the glass goes
-          cloudy.
+          the inside — beans still taste fine but the seal works less
+          well; a quick wash brings it back.
         </li>
       </ul>
 
-      <h2>The Sensory Cup</h2>
+      <h2>The Prism Rocks Glass</h2>
       <p>
-        Porcelain is forgiving. Wash by hand with warm water and a soft
-        cloth — no abrasive sponges, no hot/cold shocks, no dishwasher
-        if you can avoid it. It&rsquo;ll outlast every other thing in
-        your setup.
+        Hand-finished glass is forgiving. Wash by hand with warm water
+        and a soft cloth — no abrasive sponges, no hot/cold shocks, no
+        dishwasher if you can avoid it. The colored prism is in the
+        glass itself, not a coating, so it doesn&rsquo;t fade.
       </p>
 
       <blockquote>
