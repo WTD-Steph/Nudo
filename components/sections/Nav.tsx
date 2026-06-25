@@ -17,7 +17,7 @@ export function Nav() {
         ))}
       </div>
       <Link href={ROUTES.home} aria-label="Nudo Lab home">
-        <Wordmark height={28} variant="green" />
+        <Wordmark height={36} variant="green" />
       </Link>
       <div className="flex items-center justify-end gap-3 text-sm">
         <Link href={ROUTES.signIn} className="text-ink hover:text-rust">

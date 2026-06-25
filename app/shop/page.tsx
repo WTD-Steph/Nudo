@@ -20,13 +20,15 @@ export const metadata = {
 const CATEGORY_BLURB: Record<Category | "all", string> = {
   all: "Every Nudo piece is the one we'd hand a friend on their first day. Tested, reliable, not overbuilt.",
   espresso:
-    "Everything you need to pull an honest shot at home — minus the bits you don't.",
+    "Everything you need to pull an honest shot at home — scoops, mats, the tools that take guessing out of the puck.",
   "pour-over":
     "Filter coffee, demystified. A stand that keeps your dripper aligned, a pot that pours clean.",
   scales:
     "The cheapest, biggest single upgrade in home coffee. We sell three — Lite, Cube, and Round.",
+  "cups-mugs":
+    "Vessels that change how a cup tastes — the milk jug, the rocks glass, the deliberate ones.",
   accessories:
-    "The small things that make the rest of your setup feel finished. Mats, jugs, scoops, the storage that slows down stale.",
+    "The small things that make the rest of your setup feel finished. Storage and the rest.",
 };
 
 type SearchParams = { category?: string };

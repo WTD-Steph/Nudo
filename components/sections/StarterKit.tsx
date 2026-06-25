@@ -14,7 +14,7 @@ export function StarterKit() {
     <section className="px-12 pb-20">
       <div className="relative grid items-center gap-12 overflow-hidden rounded-[32px] bg-green p-12 text-cream lg:grid-cols-[1fr_420px] lg:px-12 lg:py-14">
         <div>
-          <span className="mb-5 inline-flex items-center gap-2 self-start rounded-full bg-cream/10 px-3 py-1.5 text-xs font-semibold tracking-wide text-cream">
+          <span className="mb-5 inline-flex items-center gap-2 self-start rounded-full bg-mustard px-4 py-2 text-[14px] font-bold tracking-wide text-ink">
             ⚡ Most popular for first-timers
           </span>
           <h2 className="mb-4 text-balance text-[72px] font-bold leading-[0.95] tracking-[-0.035em]">
@@ -22,15 +22,15 @@ export function StarterKit() {
             <em className="not-italic text-mustard">your first good shot.</em>
           </h2>
           <p className="mb-7 max-w-[460px] text-[17px] leading-snug text-cream/80">
-            Tamper, dosing cup, distributor, knock mat, microfibre cloth, and a
-            printed guide we wrote so you don&rsquo;t need to watch four YouTube
-            videos before breakfast. Free shipping.
+            Dosing scoop, tamping mat, Cube scale, sharing pot, and a printed
+            guide we wrote so you don&rsquo;t need to watch four YouTube videos
+            before breakfast. Free shipping.
           </p>
           <div className="mb-7 flex items-baseline gap-3.5">
-            <span className="text-[42px] font-bold tracking-tight">$68</span>
-            <span className="text-lg text-cream/60 line-through">$84</span>
+            <span className="text-[42px] font-bold tracking-tight">$92</span>
+            <span className="text-lg text-cream/60 line-through">$112</span>
             <span className="rounded-full bg-mustard px-3 py-1 text-xs font-bold text-ink">
-              Save 19%
+              Save 18%
             </span>
           </div>
           <Link

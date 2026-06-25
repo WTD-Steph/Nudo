@@ -7,6 +7,7 @@ export type Category =
   | "espresso"
   | "pour-over"
   | "scales"
+  | "cups-mugs"
   | "accessories";
 
 export type ProductTag = {
@@ -137,7 +138,7 @@ export const PRODUCTS: Product[] = [
     price: "$14",
     tag: { label: "Bestseller", kind: "bestseller" },
     image: "/products/dosing-scoop.png",
-    category: "accessories",
+    category: "espresso",
     placeholder: true,
     specs: [
       { label: "Material", value: "Stainless steel 304" },
@@ -160,7 +161,7 @@ export const PRODUCTS: Product[] = [
       "Identical to the brushed scoop in every measurable way; if you've already chosen white for the rest of your gear, this is the version that doesn't fight it.",
     price: "$14",
     image: "/products/dosing-scoop-white.png",
-    category: "accessories",
+    category: "espresso",
     placeholder: true,
     specs: [
       { label: "Material", value: "Stainless steel 304, white powder coat" },
@@ -184,7 +185,7 @@ export const PRODUCTS: Product[] = [
       "The thing you didn't know you needed until you tamped on a granite countertop and felt the shockwave in your shoulder. Knock-friendly, food-safe silicone. Pure black, no logo, no shine — the minimalist version.",
     price: "$18",
     image: "/products/tamping-mat.png",
-    category: "accessories",
+    category: "espresso",
     specs: [
       { label: "Material", value: "Food-grade silicone" },
       { label: "Size", value: "200 × 150 mm" },
@@ -207,7 +208,7 @@ export const PRODUCTS: Product[] = [
       "The Pro is the same mat, denser. More weight, less slide, slightly more grip on the portafilter ear. Comes in Pro Black or Pro Grey — both look right next to a chrome machine.",
     price: "$24",
     image: "/products/tamping-mat-pro.png",
-    category: "accessories",
+    category: "espresso",
     placeholder: true,
     specs: [
       { label: "Material", value: "Food-grade silicone (denser blend)" },
@@ -308,7 +309,7 @@ export const PRODUCTS: Product[] = [
       "A 500 ml stainless jug for the household where everyone wants a latte. Comfortable handle, sharp spout, polished interior that comes clean without help.",
     price: "$24",
     image: "/products/milk-jug.png",
-    category: "accessories",
+    category: "cups-mugs",
     specs: [
       { label: "Material", value: "Stainless steel" },
       { label: "Capacity", value: "500 ml" },
@@ -332,7 +333,7 @@ export const PRODUCTS: Product[] = [
     price: "$18",
     tag: { label: "New", kind: "new" },
     image: "/products/rocks-glass.png",
-    category: "accessories",
+    category: "cups-mugs",
     placeholder: true,
     specs: [
       { label: "Material", value: "Hand-finished glass" },
@@ -351,8 +352,10 @@ export const PRODUCTS: Product[] = [
 
 export const CATEGORIES: { key: Category | "all"; label: string }[] = [
   { key: "all", label: "All" },
-  { key: "scales", label: "Scales" },
+  { key: "espresso", label: "Espresso" },
   { key: "pour-over", label: "Pour-over" },
+  { key: "scales", label: "Scales" },
+  { key: "cups-mugs", label: "Cups & Mugs" },
   { key: "accessories", label: "Accessories" },
 ];
 

@@ -19,8 +19,8 @@ export default function HomePage() {
         <Hero />
         <TrustBand />
         <Reassure />
-        <Catalog />
         <StarterKit />
+        <Catalog />
         <Journey />
         <Story />
         <Newsletter />

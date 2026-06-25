@@ -17,9 +17,8 @@ export function Hero() {
           <span className="hl-underline">first brews.</span>
         </h1>
         <p className="mb-8 mt-8 max-w-[520px] text-lg leading-snug text-ink/70">
-          Friendly brewing tools for beginners who want to learn, experiment,
-          and enjoy coffee without the pressure. Because great coffee
-          doesn&rsquo;t have to be complicated.
+          For people who want to learn, experiment, and enjoy coffee.
+          Because great coffee doesn&rsquo;t have to be complicated.
         </p>
         <div className="flex flex-wrap gap-3">
           <Link
