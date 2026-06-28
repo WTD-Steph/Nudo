@@ -29,7 +29,7 @@ export const ROUTES = {
   shipping: "/help/shipping-returns",
   trackOrder: "/help/track-order",
   contact: "/help/contact",
-  signIn: "/account/sign-in",
+  signIn: "/sign-in",
   signOut: "/auth/sign-out",
   account: "/account",
   myJournal: "/account/journal",
