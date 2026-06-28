@@ -11,9 +11,13 @@ Marketing site for [Nudo Lab](https://www.nudo-lab.com). Designed in Tokyo, ship
 - **Next.js 14** (App Router) + **TypeScript**
 - **Tailwind CSS 3** (no UI library)
 - Fonts via `next/font/google`: **Urbanist** (display + body), **JetBrains Mono** (UI labels), **Noto Sans JP** (`ヌードラボ` etc.)
+- **Supabase** (Postgres + Auth) for the Nudo Journal app at `/account/*`
+- **Resend** SMTP for branded auth emails (`Nudo Lab <noreply@nudo-lab.com>`)
 - Hosted on **Vercel** (GitHub → main pushes auto-deploy)
 
 ## Local dev
+
+Copy `.env.example` to `.env.local` and fill in the Supabase URL + anon key (see `supabase/README.md`). Without them, the marketing pages still render but `/sign-in` and `/account/*` throw clear "env vars missing" errors.
 
 ```bash
 npm install
@@ -53,6 +57,10 @@ Color rules enforced in components:
 | `/about` · `/about/exakt` | Brand story · Exakt bridge with comparison table |
 | `/help/contact` · `/help/track-order` · `/help/shipping-returns` | Real forms + policy + FAQ |
 | `/api/subscribe` · `/api/contact` · `/api/track-order` | POST stubs — validate, log, return 200 (TODO provider) |
+| `/sign-in` | Magic-link sign-in form (no passwords) |
+| `/account` · `/account/journal/*` · `/account/journal/beans/*` | Nudo Journal — auth-gated. Dashboard, brews CRUD, beans CRUD |
+| `/auth/callback` · `/auth/sign-out` | PKCE callback (same-device) + POST sign-out |
+| `/verify/signup` · `/verify/magic` | Cross-device verifyOtp endpoints — links from email land here |
 | `/og` | Dynamic OG generator (`@vercel/og` on edge) |
 | `/sitemap.xml` · `/robots.txt` · `/manifest.webmanifest` | SEO + PWA bones |
 
@@ -64,6 +72,14 @@ app/
   page.tsx                    home
   not-found.tsx, og/, sitemap.ts, robots.ts, manifest.ts
   shop/, kits/, guides/, journal/, about/, help/, api/
+  sign-in/                    magic-link form (outside /account so it
+                              isn't auth-gated)
+  account/                    auth-gated. layout.tsx redirects to /sign-in
+                              if no session. journal/ (brews + beans CRUD)
+  auth/callback/              PKCE same-device callback (?code=…)
+  auth/sign-out/              POST sign-out
+  verify/signup/              cross-device confirm-signup verifyOtp
+  verify/magic/               cross-device magic-link verifyOtp
 components/
   Wordmark, DOMark            brand marks
   Silhouettes                 Rust SVG fallbacks (Sensory Cup, Drip Bag)
@@ -80,17 +96,28 @@ content/                      (empty — Phase 1 chose TS data files
                               over MDX; revisit if posts grow)
 lib/
   links.ts                    NAV_LINKS, FOOTER_COLS, MARKETPLACE_URL,
-                              EXAKT_URL, CONTACT_EMAIL — single edit
-                              point when commerce ships
+                              EXAKT_URL, CONTACT_EMAIL, ROUTES — single
+                              edit point when commerce ships
   products.ts (11)            type Product + per-product opt-in fields
   kits.ts (3)                 type Kit + product slug bundles
   guides.ts (4)               metadata; bodies in /guides/[slug]/page.tsx
   journal.ts (3)              metadata; bodies in /journal/[slug]/page.tsx
   glossary.ts (36)            term + short + long + see also
-  seo.ts                      JSON-LD builders (Organization, Product,
-                              Kit, ItemList, HowTo, Breadcrumb, FAQ,
-                              Article)
+  seo.ts                      JSON-LD builders
   validation.ts               zero-dep email/contact/track-order validators
+  supabase/                   server.ts (RSC + route handlers),
+                              client.ts (browser),
+                              middleware.ts (cookie refresh, bulletproof)
+  journal/                    actions.ts (server actions),
+                              queries.ts (server-side reads),
+                              methods.ts (brew methods + metadata),
+                              freshness.ts (roast-date → window bucket)
+types/
+  database.ts                 hand-written Supabase Database type
+                              (regenerable via `supabase gen types`)
+components/journal/
+  SignInForm, JournalNav, BeanForm, BrewForm, MethodPicker,
+  FreshnessIndicator
 public/
   brand/                      5 wordmark colorways + 2 logomarks +
                               2 stickers (real PNGs from the Drive)
@@ -128,6 +155,17 @@ scripts/
 - `prefers-reduced-motion` guard in globals
 - **Zero axe-core violations** (wcag2a/wcag2aa) on `/`, a PDP, the first-brew guide, the Exakt bridge, contact, shipping
 
+### Phase 4 — Nudo Journal V1 (June 2026)
+A passwordless coffee-logging web app at `/account/*`. Track every bean and every brew, with a "what's different?" pre-fill on each new brew that surfaces the rule "change one thing at a time."
+
+- **Auth**: magic-link via Supabase Auth. No passwords. Sign-up + sign-in collapsed into one form (`signInWithOtp`).
+- **Cross-device links**: `/verify/signup` and `/verify/magic` call `verifyOtp({ token_hash, type })` directly — no PKCE verifier cookie required. Click the email link on your phone after submitting on desktop, you're in.
+- **Schema** (`supabase/migrations/0001_journal.sql`): `profiles`, `beans`, `brews`. Full RLS — `auth.uid() = user_id` on every read/insert/update/delete. Brew method enum: espresso · pour-over · aeropress · french-press · moka-pot · drip-bag.
+- **Branded emails** via Resend SMTP (`Nudo Lab <noreply@nudo-lab.com>`). Templates managed via Supabase Management API; QA'd by a multi-lens workflow (HTML compat, deliverability, brand, a11y).
+- **Surfaces**: `/account` (dashboard with 4 stat tiles + recent brews), `/account/journal` (brews list + new brew + detail), `/account/journal/beans` (beans CRUD).
+
+See `supabase/README.md` for setup, the Resend wiring, and the cross-device URL gotcha (don't put auth routes under `/auth/*`).
+
 ## Founder TODOs
 
 Search the codebase for `TODO(...)` to find every blocked-on-you task. Highlights:
@@ -149,14 +187,20 @@ Search the codebase for `TODO(...)` to find every blocked-on-you task. Highlight
 
 ## Deploy
 
-GitHub repo: <https://github.com/WTD-Steph/Nudo>. Push to `main` → Vercel auto-deploys.
+GitHub repo: <https://github.com/WTD-Steph/Nudo>. Push to `main` → Vercel auto-deploys. Direct push to `main` is blocked by safety policy — go via PR.
 
 If Vercel isn't connected yet:
 1. <https://vercel.com/new> → import `WTD-Steph/Nudo`
 2. Accept the auto-detected Next.js settings (build command, install command, output)
-3. Deploy
+3. Add the two env vars below to Production + Preview + Development scopes
+4. Deploy
 
-No env vars are required for the current scope.
+### Required Vercel env vars
+
+| Var | Value | Notes |
+|---|---|---|
+| `NEXT_PUBLIC_SUPABASE_URL` | `https://kgcfynzmvjzhxkrfttrk.supabase.co` | `NEXT_PUBLIC_*` vars are baked into the bundle at **build time**. Changing the value requires a **redeploy** with "Use existing Build Cache" unticked. |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | From Supabase → Project Settings → API → anon public | Same build-time bake-in rule. |
 
 ## Useful commands
 
