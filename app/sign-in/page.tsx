@@ -8,7 +8,11 @@ import { ROUTES } from "@/lib/links";
 
 export const metadata = { title: "Sign in" };
 
-export default async function SignInPage() {
+export default async function SignInPage({
+  searchParams,
+}: {
+  searchParams: { error?: string };
+}) {
   // Already signed in? Skip to the dashboard.
   try {
     const supabase = createClient();
@@ -20,6 +24,8 @@ export default async function SignInPage() {
     // Supabase env vars not configured (e.g. preview without secrets).
     // Fall through to the form; it will surface the real error on submit.
   }
+
+  const error = searchParams.error?.trim() || null;
 
   return (
     <>
@@ -56,6 +62,20 @@ export default async function SignInPage() {
 
         <section className="px-12 py-12">
           <div className="mx-auto max-w-[520px]">
+            {error && (
+              <div
+                role="alert"
+                className="mb-5 rounded-md bg-rust/10 p-4 text-[14px] leading-snug text-rust"
+              >
+                <strong className="block font-semibold">Sign-in link didn&rsquo;t work.</strong>
+                <span className="block text-rust/85">{error}</span>
+                <span className="mt-2 block text-[13px] text-ink/70">
+                  Request a fresh link below. If you opened the link in a different
+                  browser or device than where you submitted, that&rsquo;s the most
+                  common cause.
+                </span>
+              </div>
+            )}
             <SignInForm />
           </div>
         </section>
