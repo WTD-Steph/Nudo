@@ -9,9 +9,9 @@ export function Catalog() {
   const visible = getProductsByCategory(active);
 
   return (
-    <section className="border-t border-rule-cream px-12 py-20">
+    <section className="border-t border-rule-cream px-5 sm:px-8 lg:px-12 py-20">
       <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
-        <h2 className="m-0 text-[64px] font-bold leading-none tracking-[-0.035em]">
+        <h2 className="m-0 text-[clamp(32px,7.5vw,64px)] font-bold leading-none tracking-[-0.035em]">
           Shop <em className="not-italic text-rust">the basics.</em>
         </h2>
         <div className="flex flex-wrap items-end gap-2">

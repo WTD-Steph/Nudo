@@ -54,7 +54,7 @@ export default function ShippingPage() {
       />
       <Nav />
       <main id="main-content" className="bg-cream">
-        <section className="px-12 pt-16">
+        <section className="px-5 sm:px-8 lg:px-12 pt-16">
           <div className="mx-auto max-w-[920px]">
             <nav aria-label="Breadcrumb" className="text-[13px] text-ink/75">
               <Link href={ROUTES.home}>Home</Link>
@@ -76,7 +76,7 @@ export default function ShippingPage() {
         </section>
 
         {/* Quick cards */}
-        <section className="px-12 py-12">
+        <section className="px-5 sm:px-8 lg:px-12 py-12">
           <div className="mx-auto grid max-w-[920px] gap-4 md:grid-cols-2">
             <div className="rounded-[22px] bg-cream-paper p-6">
               <div className="font-mono text-[11px] uppercase tracking-widest text-rust">
@@ -121,7 +121,7 @@ export default function ShippingPage() {
         </section>
 
         {/* Regions */}
-        <section className="px-12 py-12">
+        <section className="px-5 sm:px-8 lg:px-12 py-12">
           <div className="mx-auto max-w-[920px]">
             <h2 className="m-0 mb-6 text-[clamp(24px,2.6vw,36px)] font-bold leading-tight tracking-tight">
               Regions &amp; rates.
@@ -177,7 +177,7 @@ export default function ShippingPage() {
         </section>
 
         {/* FAQ */}
-        <section className="px-12 py-16">
+        <section className="px-5 sm:px-8 lg:px-12 py-16">
           <div className="mx-auto max-w-[920px]">
             <h2 className="m-0 mb-6 text-[clamp(24px,2.6vw,36px)] font-bold leading-tight tracking-tight">
               Frequently asked.

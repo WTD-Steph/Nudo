@@ -57,7 +57,7 @@ export default function ShopIndex({
       />
       <Nav />
       <main id="main-content" className="bg-cream">
-        <section className="px-12 pt-16">
+        <section className="px-5 sm:px-8 lg:px-12 pt-16">
           <div className="mx-auto max-w-[1280px]">
             <div className="font-mono text-[12px] uppercase tracking-widest text-rust">
               Shop · {visible.length} item{visible.length === 1 ? "" : "s"}
@@ -80,7 +80,7 @@ export default function ShopIndex({
           </div>
         </section>
 
-        <section className="px-12 py-12">
+        <section className="px-5 sm:px-8 lg:px-12 py-12">
           <div className="mx-auto max-w-[1280px]">
             <div className="mb-10 flex flex-wrap gap-2 border-b border-rule-cream pb-6">
               {CATEGORIES.map((f) => (

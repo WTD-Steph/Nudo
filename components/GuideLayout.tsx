@@ -16,7 +16,7 @@ export function GuideLayout({ guide, related = [], children }: Props) {
       <Nav />
       <main id="main-content" className="bg-cream">
         {/* Header */}
-        <header className="px-12 pt-16">
+        <header className="px-5 sm:px-8 lg:px-12 pt-16">
           <div className="mx-auto max-w-[760px]">
             <nav
               aria-label="Breadcrumb"
@@ -46,7 +46,7 @@ export function GuideLayout({ guide, related = [], children }: Props) {
         </header>
 
         {/* Body — Urbanist 18px, generous leading, ~70ch max */}
-        <article className="px-12 py-12">
+        <article className="px-5 sm:px-8 lg:px-12 py-12">
           <div className="mx-auto max-w-[760px] [&_h2]:mb-3 [&_h2]:mt-12 [&_h2]:text-balance [&_h2]:text-[clamp(24px,2.6vw,34px)] [&_h2]:font-bold [&_h2]:leading-tight [&_h2]:tracking-tight [&_h3]:mb-2 [&_h3]:mt-8 [&_h3]:text-[20px] [&_h3]:font-semibold [&_h3]:tracking-tight [&_p]:mt-4 [&_p]:text-[18px] [&_p]:leading-[1.65] [&_p]:text-ink/80 [&_ul]:mt-4 [&_ul]:flex [&_ul]:list-none [&_ul]:flex-col [&_ul]:gap-2.5 [&_ul]:pl-0 [&_ol]:mt-4 [&_ol]:flex [&_ol]:list-none [&_ol]:flex-col [&_ol]:gap-3 [&_ol]:pl-0 [&_li]:flex [&_li]:items-start [&_li]:gap-3 [&_li]:text-[17px] [&_li]:leading-snug [&_li]:text-ink/80 [&_li>span:first-child]:mt-2 [&_li>span:first-child]:inline-block [&_li>span:first-child]:h-2 [&_li>span:first-child]:w-2 [&_li>span:first-child]:flex-shrink-0 [&_li>span:first-child]:rounded-full [&_li>span:first-child]:bg-rust [&_blockquote]:my-8 [&_blockquote]:rounded-[22px] [&_blockquote]:bg-sand [&_blockquote]:p-8 [&_blockquote]:text-[20px] [&_blockquote]:font-semibold [&_blockquote]:leading-snug [&_blockquote]:tracking-tight">
             {children}
           </div>
@@ -54,7 +54,7 @@ export function GuideLayout({ guide, related = [], children }: Props) {
 
         {/* Footer — related */}
         {related.length > 0 && (
-          <section className="border-t border-rule-cream px-12 py-16">
+          <section className="border-t border-rule-cream px-5 sm:px-8 lg:px-12 py-16">
             <div className="mx-auto max-w-[760px]">
               <h2 className="m-0 mb-6 text-[clamp(22px,2.4vw,32px)] font-bold leading-tight tracking-tight">
                 Keep going.

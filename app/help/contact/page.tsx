@@ -45,7 +45,7 @@ export default function ContactPage() {
       />
       <Nav />
       <main id="main-content" className="bg-cream">
-        <section className="px-12 pt-16">
+        <section className="px-5 sm:px-8 lg:px-12 pt-16">
           <div className="mx-auto max-w-[920px]">
             <nav aria-label="Breadcrumb" className="text-[13px] text-ink/75">
               <Link href={ROUTES.home}>Home</Link>
@@ -67,7 +67,7 @@ export default function ContactPage() {
         </section>
 
         {/* Quick channels */}
-        <section className="px-12 py-12">
+        <section className="px-5 sm:px-8 lg:px-12 py-12">
           <div className="mx-auto grid max-w-[920px] gap-4 md:grid-cols-2">
             <a
               href={`mailto:${CONTACT_EMAIL}`}
@@ -102,7 +102,7 @@ export default function ContactPage() {
         </section>
 
         {/* Form */}
-        <section className="px-12 py-12">
+        <section className="px-5 sm:px-8 lg:px-12 py-12">
           <div className="mx-auto max-w-[920px]">
             <h2 className="m-0 mb-6 text-[clamp(24px,2.6vw,36px)] font-bold leading-tight tracking-tight">
               Or send a message.
@@ -112,7 +112,7 @@ export default function ContactPage() {
         </section>
 
         {/* FAQ */}
-        <section className="px-12 py-16">
+        <section className="px-5 sm:px-8 lg:px-12 py-16">
           <div className="mx-auto max-w-[920px]">
             <h2 className="m-0 mb-8 text-[clamp(24px,2.6vw,36px)] font-bold leading-tight tracking-tight">
               Things people ask first.

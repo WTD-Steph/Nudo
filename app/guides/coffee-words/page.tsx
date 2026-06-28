@@ -28,7 +28,7 @@ export default function GlossaryPage() {
     <>
       <Nav />
       <main id="main-content" className="bg-cream">
-        <header className="px-12 pt-16">
+        <header className="px-5 sm:px-8 lg:px-12 pt-16">
           <div className="mx-auto max-w-[920px]">
             <nav aria-label="Breadcrumb" className="text-[13px] text-ink/75">
               <Link href={ROUTES.home}>Home</Link>
@@ -61,7 +61,7 @@ export default function GlossaryPage() {
         {/* Letter jump-bar */}
         <nav
           aria-label="Jump to letter"
-          className="sticky top-[64px] z-20 border-b border-rule-cream bg-cream/95 px-12 py-3 backdrop-blur"
+          className="sticky top-[64px] z-20 border-b border-rule-cream bg-cream/95 px-5 sm:px-8 lg:px-12 py-3 backdrop-blur"
         >
           <div className="mx-auto flex max-w-[920px] flex-wrap gap-1 text-[13px]">
             {letters.map((l) => (
@@ -77,7 +77,7 @@ export default function GlossaryPage() {
         </nav>
 
         {/* Entries */}
-        <section className="px-12 py-12">
+        <section className="px-5 sm:px-8 lg:px-12 py-12">
           <div className="mx-auto max-w-[920px]">
             {groups.map(([letter, entries]) => (
               <div key={letter} id={`letter-${letter}`} className="mb-12 scroll-mt-32">

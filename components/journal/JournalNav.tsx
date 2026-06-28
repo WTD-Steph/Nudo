@@ -15,7 +15,7 @@ export function JournalNav({ email }: { email?: string | null }) {
 
   return (
     <div className="border-b border-rule-cream bg-cream/95 backdrop-blur">
-      <div className="mx-auto flex max-w-[1280px] flex-wrap items-center justify-between gap-4 px-12 py-4">
+      <div className="mx-auto flex max-w-[1280px] flex-wrap items-center justify-between gap-x-4 gap-y-2.5 px-5 py-2.5 sm:px-8 sm:py-4 lg:px-12">
         <div className="flex items-center gap-2">
           <Link
             href={ROUTES.account}
@@ -30,7 +30,8 @@ export function JournalNav({ email }: { email?: string | null }) {
             · 日々
           </span>
         </div>
-        <nav className="flex flex-wrap gap-1.5">
+        {/* Tabs: own full-width row on phones, inline on ≥ sm */}
+        <nav className="order-last -mx-1 flex w-full gap-1.5 overflow-x-auto px-1 sm:order-none sm:mx-0 sm:w-auto sm:px-0">
           {TABS.map((t) => {
             const active =
               pathname === t.href ||
@@ -40,7 +41,7 @@ export function JournalNav({ email }: { email?: string | null }) {
                 key={t.href}
                 href={t.href}
                 aria-current={active ? "page" : undefined}
-                className={`rounded-full px-3.5 py-1.5 text-[13px] font-semibold transition ${
+                className={`inline-flex min-h-[36px] shrink-0 items-center rounded-full px-3.5 py-1.5 text-[13px] font-semibold transition ${
                   active
                     ? "bg-green text-cream"
                     : "text-ink/75 hover:bg-cream-paper"
@@ -53,7 +54,7 @@ export function JournalNav({ email }: { email?: string | null }) {
         </nav>
         <form action={ROUTES.signOut} method="post" className="flex items-center gap-3">
           {email && (
-            <span className="text-[12px] text-ink/65" title={email}>
+            <span className="hidden text-[12px] text-ink/65 sm:inline" title={email}>
               {email.length > 28 ? email.slice(0, 26) + "…" : email}
             </span>
           )}

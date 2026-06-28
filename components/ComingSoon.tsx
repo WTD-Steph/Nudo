@@ -15,7 +15,7 @@ export function ComingSoon({ title, eyebrow, blurb }: Props) {
     <>
       <Nav />
       <main id="main-content" className="bg-cream">
-        <section className="mx-auto flex max-w-[760px] flex-col items-center px-12 py-32 text-center">
+        <section className="mx-auto flex max-w-[760px] flex-col items-center px-5 sm:px-8 lg:px-12 py-32 text-center">
           <DOMark size={72} variant="black" className="mb-8 opacity-30" />
           {eyebrow && (
             <div className="mb-3 font-mono text-[12px] uppercase tracking-widest text-rust">

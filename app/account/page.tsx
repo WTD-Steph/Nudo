@@ -38,7 +38,7 @@ export default async function AccountDashboard() {
   return (
     <>
       {/* Hero */}
-      <section className="px-12 pt-12">
+      <section className="px-5 sm:px-8 lg:px-12 pt-12">
         <div className="mx-auto max-w-[1100px]">
           <div className="flex items-center gap-3">
             <div className="font-mono text-[12px] uppercase tracking-widest text-rust">
@@ -63,7 +63,7 @@ export default async function AccountDashboard() {
       </section>
 
       {/* Quick stats */}
-      <section className="px-12 py-10">
+      <section className="px-5 sm:px-8 lg:px-12 py-10">
         <div className="mx-auto grid max-w-[1100px] grid-cols-2 gap-4 md:grid-cols-4">
           <Stat
             label="Total brews"
@@ -87,7 +87,7 @@ export default async function AccountDashboard() {
       </section>
 
       {/* Recent + Fresh beans */}
-      <section className="px-12 pb-16">
+      <section className="px-5 sm:px-8 lg:px-12 pb-16">
         <div className="mx-auto grid max-w-[1100px] gap-8 lg:grid-cols-[1.4fr_1fr]">
           {/* Recent */}
           <div>

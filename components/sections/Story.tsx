@@ -3,7 +3,7 @@ import { ROUTES } from "@/lib/links";
 
 export function Story() {
   return (
-    <section className="grid items-center gap-16 border-t border-rule-cream px-12 py-20 lg:grid-cols-[460px_1fr]">
+    <section className="grid items-center gap-10 border-t border-rule-cream px-5 sm:px-8 lg:px-12 py-20 sm:gap-16 lg:grid-cols-[460px_1fr]">
       <div className="relative aspect-[4/5] overflow-hidden rounded-[28px] bg-cream-paper">
         <div
           className="absolute inset-0"
@@ -17,7 +17,7 @@ export function Story() {
         </span>
       </div>
       <div>
-        <h2 className="m-0 mb-6 text-balance text-[64px] font-bold leading-none tracking-[-0.035em]">
+        <h2 className="m-0 mb-6 text-balance text-[clamp(32px,7.5vw,64px)] font-bold leading-[1.02] tracking-[-0.035em] sm:leading-none">
           We started Nudo because{" "}
           <em className="not-italic text-rust">starting</em> was the hardest
           part.

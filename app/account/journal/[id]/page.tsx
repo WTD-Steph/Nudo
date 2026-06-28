@@ -62,7 +62,7 @@ export default async function BrewDetailPage({
   }
 
   return (
-    <section className="px-12 py-12">
+    <section className="px-5 sm:px-8 lg:px-12 py-12">
       <div className="mx-auto max-w-[920px]">
         <nav aria-label="Breadcrumb" className="text-[13px] text-ink/75">
           <Link href={ROUTES.myJournal}>Brews</Link>

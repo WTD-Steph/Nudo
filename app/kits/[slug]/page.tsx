@@ -61,7 +61,7 @@ export default function KitDetail({ params }: { params: { slug: string } }) {
         {/* Breadcrumbs */}
         <nav
           aria-label="Breadcrumb"
-          className="mx-auto max-w-[1280px] px-12 pt-8 text-[13px] text-ink/75"
+          className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12 pt-8 text-[13px] text-ink/75"
         >
           <Link href={ROUTES.home}>Home</Link>
           <span className="mx-2">/</span>
@@ -71,7 +71,7 @@ export default function KitDetail({ params }: { params: { slug: string } }) {
         </nav>
 
         {/* Hero */}
-        <section className="mx-auto grid max-w-[1280px] gap-12 px-12 py-12 lg:grid-cols-[1fr_1fr]">
+        <section className="mx-auto grid max-w-[1280px] gap-12 px-5 sm:px-8 lg:px-12 py-12 lg:grid-cols-[1fr_1fr]">
           {/* Hero visual: stacked silhouette grid of the bundled items */}
           <div className="relative aspect-square overflow-hidden rounded-[22px] bg-sand p-6">
             <div className="grid h-full w-full grid-cols-2 grid-rows-2 gap-3">
@@ -148,7 +148,7 @@ export default function KitDetail({ params }: { params: { slug: string } }) {
         </section>
 
         {/* Why we bundled it this way */}
-        <section className="border-t border-rule-cream px-12 py-16">
+        <section className="border-t border-rule-cream px-5 sm:px-8 lg:px-12 py-16">
           <div className="mx-auto grid max-w-[1280px] gap-12 lg:grid-cols-[1fr_2fr]">
             <h2 className="m-0 text-[36px] font-bold leading-tight tracking-tight">
               Why we bundled it{" "}
@@ -161,7 +161,7 @@ export default function KitDetail({ params }: { params: { slug: string } }) {
         </section>
 
         {/* What's in the box */}
-        <section className="border-t border-rule-cream px-12 py-16">
+        <section className="border-t border-rule-cream px-5 sm:px-8 lg:px-12 py-16">
           <div className="mx-auto max-w-[1280px]">
             <h2 className="m-0 mb-8 text-[36px] font-bold leading-tight tracking-tight">
               What&rsquo;s in the box.
@@ -215,7 +215,7 @@ export default function KitDetail({ params }: { params: { slug: string } }) {
 
         {/* Pair with a guide */}
         {kit.pairWithGuide && (
-          <section className="px-12 py-16">
+          <section className="px-5 sm:px-8 lg:px-12 py-16">
             <div className="mx-auto max-w-[1280px]">
               <Link
                 href={ROUTES.guide(kit.pairWithGuide.slug)}
@@ -238,7 +238,7 @@ export default function KitDetail({ params }: { params: { slug: string } }) {
         )}
 
         {/* What this kit won't do */}
-        <section className="border-t border-rule-cream px-12 py-16">
+        <section className="border-t border-rule-cream px-5 sm:px-8 lg:px-12 py-16">
           <div className="mx-auto max-w-[1280px]">
             <div className="rounded-[22px] bg-sand p-10 lg:p-14">
               <div className="mb-3 font-mono text-[12px] font-semibold uppercase tracking-widest text-green">

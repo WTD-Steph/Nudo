@@ -37,10 +37,10 @@ export function Newsletter() {
   }
 
   return (
-    <section className="bg-cream-paper px-12 py-20">
+    <section className="bg-cream-paper px-5 sm:px-8 lg:px-12 py-20">
       <div className="grid items-center gap-14 md:grid-cols-2">
         <div>
-          <h2 className="m-0 text-balance text-[56px] font-bold leading-none tracking-[-0.03em]">
+          <h2 className="m-0 text-balance text-[clamp(30px,6.8vw,56px)] font-bold leading-[1.02] tracking-[-0.03em] sm:leading-none">
             Bad first shots,{" "}
             <em className="not-italic text-rust">fixed.</em>
           </h2>
