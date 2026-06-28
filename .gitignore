@@ -30,6 +30,10 @@ yarn-error.log*
 # vercel
 .vercel
 
+# MCP config — contains a Supabase Personal Access Token (PAT).
+# Keep local; never push the secret to a public repo.
+.mcp.json
+
 # raw Drive dump — regenerate with scripts/fetch_drive.py
 /public/assets/drive/
 

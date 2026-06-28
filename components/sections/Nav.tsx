@@ -1,8 +1,23 @@
 import Link from "next/link";
 import { Wordmark } from "../Wordmark";
 import { NAV_LINKS, ROUTES } from "@/lib/links";
+import { createClient } from "@/lib/supabase/server";
 
-export function Nav() {
+async function getSession() {
+  try {
+    const supabase = createClient();
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    return user;
+  } catch {
+    return null;
+  }
+}
+
+export async function Nav() {
+  const user = await getSession();
+
   return (
     <nav className="sticky top-0 z-30 grid grid-cols-[1fr_auto_1fr] items-center bg-cream/95 px-12 py-5 backdrop-blur">
       <div className="flex gap-7 text-sm font-medium">
@@ -20,9 +35,21 @@ export function Nav() {
         <Wordmark height={36} variant="green" />
       </Link>
       <div className="flex items-center justify-end gap-3 text-sm">
-        <Link href={ROUTES.signIn} className="text-ink hover:text-rust">
-          Sign in
-        </Link>
+        {user ? (
+          <Link
+            href={ROUTES.account}
+            className="inline-flex items-center gap-2 rounded-full bg-green px-4 py-2 text-[13px] font-semibold text-cream transition hover:bg-green/90"
+          >
+            Journal
+            <span className="font-ja text-[11px]" lang="ja">
+              日々
+            </span>
+          </Link>
+        ) : (
+          <Link href={ROUTES.signIn} className="text-ink hover:text-rust">
+            Sign in
+          </Link>
+        )}
         <Link
           href={ROUTES.cart}
           className="inline-flex items-center gap-2 rounded-full bg-green px-4 py-2 text-[13px] font-semibold text-cream transition hover:bg-green/90"

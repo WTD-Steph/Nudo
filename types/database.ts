@@ -84,20 +84,26 @@ export type Database = {
         Row: Profile;
         Insert: Partial<Profile> & { id: string };
         Update: Partial<Profile>;
+        Relationships: [];
       };
       beans: {
         Row: Bean;
         Insert: BeanInsert;
         Update: Partial<Bean>;
+        Relationships: [];
       };
       brews: {
         Row: Brew;
         Insert: BrewInsert;
         Update: Partial<Brew>;
+        Relationships: [];
       };
     };
+    Views: Record<string, never>;
+    Functions: Record<string, never>;
     Enums: {
       brew_method: BrewMethod;
     };
+    CompositeTypes: Record<string, never>;
   };
 };
