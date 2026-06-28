@@ -27,9 +27,9 @@ const CARDS = [
 
 export function Reassure() {
   return (
-    <section className="px-12 py-20">
-      <div className="mb-12 flex items-end justify-between">
-        <h2 className="m-0 max-w-[720px] text-balance text-[56px] font-bold leading-[1.02] tracking-[-0.03em]">
+    <section className="px-5 sm:px-8 lg:px-12 py-20">
+      <div className="mb-12 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+        <h2 className="m-0 max-w-[720px] text-balance text-[clamp(30px,6.8vw,56px)] font-bold leading-[1.05] tracking-[-0.03em] sm:leading-[1.02]">
           Three things you don&rsquo;t need to be{" "}
           <em className="not-italic text-rust">intimidated</em> by.
         </h2>

@@ -5,7 +5,7 @@ import { FOOTER_COLS, ROUTES } from "@/lib/links";
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-green px-12 py-20 text-cream">
+    <footer className="relative overflow-hidden bg-green px-5 sm:px-8 lg:px-12 py-20 text-cream">
       {/* Large faded logomark in the corner — brand-signature mark. */}
       <DOMark
         size={520}
@@ -13,8 +13,8 @@ export function Footer() {
         className="pointer-events-none absolute -bottom-24 -right-24 opacity-[0.06]"
       />
 
-      <div className="grid gap-12 border-b border-rule-green pb-14 lg:grid-cols-[2fr_1fr_1fr_1fr]">
-        <div>
+      <div className="grid gap-10 border-b border-rule-green pb-14 sm:grid-cols-2 sm:gap-12 lg:grid-cols-[2fr_1fr_1fr_1fr]">
+        <div className="sm:col-span-2 lg:col-span-1">
           <Link href={ROUTES.home} aria-label="Nudo Lab home" className="mb-5 inline-block">
             <Wordmark height={44} variant="cream" />
           </Link>

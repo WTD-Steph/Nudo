@@ -18,7 +18,7 @@ export default function ExaktBridgePage() {
       <Nav />
       <main id="main-content" className="bg-cream">
         {/* Hero */}
-        <section className="px-12 pb-12 pt-16">
+        <section className="px-5 sm:px-8 lg:px-12 pb-12 pt-16">
           <div className="mx-auto max-w-[920px]">
             <div className="font-mono text-[12px] uppercase tracking-widest text-rust">
               Sibling brand · Exakt
@@ -33,7 +33,7 @@ export default function ExaktBridgePage() {
         </section>
 
         {/* The pitch */}
-        <section className="px-12 py-12">
+        <section className="px-5 sm:px-8 lg:px-12 py-12">
           <div className="mx-auto grid max-w-[920px] gap-6 text-[18px] leading-relaxed text-ink/80">
             <p>
               Nudo was made for the first six months of your coffee journey.
@@ -53,7 +53,7 @@ export default function ExaktBridgePage() {
         </section>
 
         {/* Comparison table */}
-        <section className="px-12 py-12">
+        <section className="px-5 sm:px-8 lg:px-12 py-12">
           <div className="mx-auto max-w-[1100px]">
             <h2 className="m-0 mb-8 text-[clamp(28px,3vw,44px)] font-bold leading-tight tracking-tight">
               How they&rsquo;re different.
@@ -63,7 +63,7 @@ export default function ExaktBridgePage() {
         </section>
 
         {/* Signals you're ready */}
-        <section className="px-12 py-12">
+        <section className="px-5 sm:px-8 lg:px-12 py-12">
           <div className="mx-auto max-w-[920px] rounded-[22px] bg-sand p-10">
             <div className="font-mono text-[12px] font-semibold uppercase tracking-widest text-green">
               Honest signals
@@ -91,7 +91,7 @@ export default function ExaktBridgePage() {
         </section>
 
         {/* CTAs */}
-        <section className="px-12 py-16">
+        <section className="px-5 sm:px-8 lg:px-12 py-16">
           <div className="mx-auto max-w-[920px]">
             <div className="rounded-[22px] bg-green p-10 text-cream">
               <p className="m-0 text-[15px] leading-snug text-cream/80">

@@ -31,7 +31,7 @@ export default async function SignInPage({
     <>
       <Nav />
       <main id="main-content" className="bg-cream">
-        <section className="px-12 pt-16">
+        <section className="px-5 sm:px-8 lg:px-12 pt-16">
           <div className="mx-auto max-w-[640px]">
             <nav aria-label="Breadcrumb" className="text-[13px] text-ink/75">
               <Link href={ROUTES.home}>Home</Link>
@@ -60,7 +60,7 @@ export default async function SignInPage({
           </div>
         </section>
 
-        <section className="px-12 py-12">
+        <section className="px-5 sm:px-8 lg:px-12 py-12">
           <div className="mx-auto max-w-[520px]">
             {error && (
               <div

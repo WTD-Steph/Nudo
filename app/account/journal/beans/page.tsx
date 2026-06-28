@@ -10,7 +10,7 @@ export default async function BeansIndex() {
   const beans = await listBeans();
 
   return (
-    <section className="px-12 py-12">
+    <section className="px-5 sm:px-8 lg:px-12 py-12">
       <div className="mx-auto max-w-[1100px]">
         <header className="mb-8 flex flex-wrap items-end justify-between gap-4">
           <div>

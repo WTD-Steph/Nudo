@@ -93,7 +93,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         {/* Breadcrumbs */}
         <nav
           aria-label="Breadcrumb"
-          className="mx-auto max-w-[1280px] px-12 pt-8 text-[13px] text-ink/75"
+          className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12 pt-8 text-[13px] text-ink/75"
         >
           <Link href={ROUTES.home}>Home</Link>
           <span className="mx-2">/</span>
@@ -103,7 +103,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         </nav>
 
         {/* Hero */}
-        <section className="mx-auto grid max-w-[1280px] gap-12 px-12 py-12 lg:grid-cols-[1.1fr_1fr]">
+        <section className="mx-auto grid max-w-[1280px] gap-12 px-5 sm:px-8 lg:px-12 py-12 lg:grid-cols-[1.1fr_1fr]">
           <div className="relative aspect-square overflow-hidden rounded-[22px] bg-sand">
             <HeroImage p={p} />
             {p.placeholder && (
@@ -170,7 +170,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
         {/* Sensory icons (Sensory Cup) */}
         {p.sensoryIcons && (
-          <section className="border-t border-rule-cream px-12 py-16">
+          <section className="border-t border-rule-cream px-5 sm:px-8 lg:px-12 py-16">
             <div className="mx-auto max-w-[1280px]">
               <div className="mb-8 font-mono text-[12px] uppercase tracking-widest text-rust">
                 Designed for tasting
@@ -199,7 +199,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
         {/* Color options */}
         {p.colors && (
-          <section className="px-12 pb-4">
+          <section className="px-5 sm:px-8 lg:px-12 pb-4">
             <div className="mx-auto max-w-[1280px]">
               <div className="mb-3 text-[14px] font-semibold">
                 Available in
@@ -225,7 +225,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
         {/* How to enjoy */}
         {p.howToEnjoy && (
-          <section className="border-t border-rule-cream px-12 py-16">
+          <section className="border-t border-rule-cream px-5 sm:px-8 lg:px-12 py-16">
             <div className="mx-auto max-w-[1280px]">
               <h2 className="m-0 mb-8 text-[36px] font-bold leading-tight tracking-tight">
                 How to <em className="not-italic text-rust">enjoy</em> it.
@@ -248,7 +248,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         )}
 
         {/* What it's for */}
-        <section className="border-t border-rule-cream px-12 py-16">
+        <section className="border-t border-rule-cream px-5 sm:px-8 lg:px-12 py-16">
           <div className="mx-auto grid max-w-[1280px] gap-12 lg:grid-cols-[1fr_2fr]">
             <h2 className="m-0 text-[36px] font-bold leading-tight tracking-tight">
               Use this when…
@@ -268,7 +268,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         </section>
 
         {/* Honest expectations */}
-        <section className="px-12 py-16">
+        <section className="px-5 sm:px-8 lg:px-12 py-16">
           <div className="mx-auto max-w-[1280px]">
             <div className="rounded-[22px] bg-sand p-10 lg:p-14">
               <div className="mb-3 font-mono text-[12px] font-semibold uppercase tracking-widest text-green">
@@ -283,7 +283,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
         {/* Cross-sell */}
         {crossSell.length > 0 && (
-          <section className="border-t border-rule-cream px-12 py-16">
+          <section className="border-t border-rule-cream px-5 sm:px-8 lg:px-12 py-16">
             <div className="mx-auto max-w-[1280px]">
               <h2 className="m-0 mb-8 text-[36px] font-bold leading-tight tracking-tight">
                 What people use this <em className="not-italic text-rust">with.</em>

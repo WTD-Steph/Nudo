@@ -25,7 +25,7 @@ export function JournalLayout({ post, children }: Props) {
     <>
       <Nav />
       <main id="main-content" className="bg-cream">
-        <header className="px-12 pt-16">
+        <header className="px-5 sm:px-8 lg:px-12 pt-16">
           <div className="mx-auto max-w-[760px]">
             <nav aria-label="Breadcrumb" className="text-[13px] text-ink/75">
               <Link href={ROUTES.home}>Home</Link>
@@ -53,13 +53,13 @@ export function JournalLayout({ post, children }: Props) {
           </div>
         </header>
 
-        <article className="px-12 py-12">
+        <article className="px-5 sm:px-8 lg:px-12 py-12">
           <div className="mx-auto max-w-[760px] [&_h2]:mb-3 [&_h2]:mt-12 [&_h2]:text-balance [&_h2]:text-[clamp(22px,2.4vw,30px)] [&_h2]:font-bold [&_h2]:leading-tight [&_h2]:tracking-tight [&_p]:mt-4 [&_p]:text-[17px] [&_p]:leading-[1.65] [&_p]:text-ink/80 [&_blockquote]:my-8 [&_blockquote]:rounded-[22px] [&_blockquote]:bg-sand [&_blockquote]:p-8 [&_blockquote]:text-[18px] [&_blockquote]:italic [&_blockquote]:leading-snug">
             {children}
           </div>
         </article>
 
-        <section className="border-t border-rule-cream px-12 py-16">
+        <section className="border-t border-rule-cream px-5 sm:px-8 lg:px-12 py-16">
           <div className="mx-auto max-w-[760px] text-center">
             <Link
               href={ROUTES.journal}

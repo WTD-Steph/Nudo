@@ -4,7 +4,7 @@ import { ROUTES } from "@/lib/links";
 
 export function Hero() {
   return (
-    <section className="grid grid-cols-1 items-center gap-14 px-12 pb-20 pt-8 lg:grid-cols-[1fr_540px]">
+    <section className="grid grid-cols-1 items-center gap-14 px-5 sm:px-8 lg:px-12 pb-20 pt-8 lg:grid-cols-[1fr_540px]">
       <div>
         <div className="mb-7 inline-flex items-center gap-3 self-start rounded-full bg-sand px-3.5 py-1.5 text-[13px] font-semibold">
           <span className="text-base">👋</span> Hi — first time here?

@@ -21,10 +21,10 @@ export function AnnouncementBar() {
 
   return (
     <div className="bg-green text-cream">
-      <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-4 px-12 py-2 text-[13px]">
+      <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-4 px-5 sm:px-8 lg:px-12 py-2 text-[13px]">
         <Link
           href={ROUTES.firstBrewKit}
-          className="font-medium hover:text-mustard"
+          className="font-medium leading-snug hover:text-mustard"
         >
           New here? Try the First-Brew Kit — free shipping, no-questions returns →
         </Link>

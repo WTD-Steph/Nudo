@@ -11,7 +11,7 @@ export default function NotFound() {
     <>
       <Nav />
       <main className="bg-cream">
-        <section className="mx-auto flex max-w-[760px] flex-col items-center px-12 py-32 text-center">
+        <section className="mx-auto flex max-w-[760px] flex-col items-center px-5 sm:px-8 lg:px-12 py-32 text-center">
           <DOMark size={88} variant="black" className="mb-8 opacity-30" />
           <div className="font-mono text-[12px] uppercase tracking-widest text-rust">
             404 · page not found

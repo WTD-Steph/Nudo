@@ -22,7 +22,7 @@ export default function GuidesPage() {
     <>
       <Nav />
       <main id="main-content" className="bg-cream">
-        <header className="px-12 pt-16">
+        <header className="px-5 sm:px-8 lg:px-12 pt-16">
           <div className="mx-auto max-w-[920px]">
             <div className="font-mono text-[12px] uppercase tracking-widest text-rust">
               Guides · {GUIDES.length} pieces
@@ -37,7 +37,7 @@ export default function GuidesPage() {
           </div>
         </header>
 
-        <section className="px-12 py-16">
+        <section className="px-5 sm:px-8 lg:px-12 py-16">
           <div className="mx-auto grid max-w-[1100px] gap-6 md:grid-cols-2">
             {GUIDES.map((g, i) => (
               <Link

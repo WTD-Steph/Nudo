@@ -24,9 +24,9 @@ const STEPS = [
 
 export function Journey() {
   return (
-    <section className="border-t border-rule-cream px-12 py-20">
+    <section className="border-t border-rule-cream px-5 sm:px-8 lg:px-12 py-20">
       <div className="mb-14 grid items-end gap-12 md:grid-cols-2">
-        <h2 className="m-0 text-balance text-[56px] font-bold leading-none tracking-[-0.03em]">
+        <h2 className="m-0 text-balance text-[clamp(30px,6.8vw,56px)] font-bold leading-[1.02] tracking-[-0.03em] sm:leading-none">
           Your <em className="not-italic text-rust">first brew</em>, in three
           honest steps.
         </h2>

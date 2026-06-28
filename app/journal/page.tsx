@@ -31,7 +31,7 @@ export default function JournalPage() {
     <>
       <Nav />
       <main id="main-content" className="bg-cream">
-        <header className="px-12 pt-16">
+        <header className="px-5 sm:px-8 lg:px-12 pt-16">
           <div className="mx-auto max-w-[920px]">
             <div className="font-mono text-[12px] uppercase tracking-widest text-rust">
               Journal · {posts.length} pieces
@@ -46,7 +46,7 @@ export default function JournalPage() {
           </div>
         </header>
 
-        <section className="px-12 py-16">
+        <section className="px-5 sm:px-8 lg:px-12 py-16">
           <div className="mx-auto max-w-[920px]">
             <ul className="flex flex-col gap-0 divide-y divide-rule-cream">
               {posts.map((p) => (

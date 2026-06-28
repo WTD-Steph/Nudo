@@ -16,7 +16,7 @@ export default function AboutPage() {
       <Nav />
       <main id="main-content" className="bg-cream">
         {/* Hero */}
-        <section className="px-12 pb-12 pt-16">
+        <section className="px-5 sm:px-8 lg:px-12 pb-12 pt-16">
           <div className="mx-auto max-w-[920px]">
             <div className="font-mono text-[12px] uppercase tracking-widest text-rust">
               About · For every first brews
@@ -29,7 +29,7 @@ export default function AboutPage() {
         </section>
 
         {/* The story */}
-        <section className="px-12 py-12">
+        <section className="px-5 sm:px-8 lg:px-12 py-12">
           <div className="mx-auto grid max-w-[920px] gap-6 text-[18px] leading-relaxed text-ink/80">
             <p>
               The shelf is full of equipment that makes coffee feel like a
@@ -56,7 +56,7 @@ export default function AboutPage() {
         </section>
 
         {/* About the name */}
-        <section className="px-12 py-12">
+        <section className="px-5 sm:px-8 lg:px-12 py-12">
           <div className="mx-auto max-w-[920px] rounded-[22px] bg-cream-paper p-10">
             <h2 className="m-0 text-[clamp(28px,3vw,44px)] font-bold leading-tight tracking-tight">
               About the name.
@@ -77,7 +77,7 @@ export default function AboutPage() {
         </section>
 
         {/* What we make */}
-        <section className="px-12 py-12">
+        <section className="px-5 sm:px-8 lg:px-12 py-12">
           <div className="mx-auto grid max-w-[920px] gap-6 text-[18px] leading-relaxed text-ink/80">
             <h2 className="m-0 text-[clamp(28px,3vw,44px)] font-bold leading-tight tracking-tight">
               What we make. And what we don&rsquo;t.
@@ -105,7 +105,7 @@ export default function AboutPage() {
         </section>
 
         {/* Meet Exakt */}
-        <section className="px-12 py-12">
+        <section className="px-5 sm:px-8 lg:px-12 py-12">
           <div className="mx-auto max-w-[920px]">
             <Link
               href={ROUTES.exakt}
@@ -130,7 +130,7 @@ export default function AboutPage() {
         </section>
 
         {/* Where to find us */}
-        <section className="border-t border-rule-cream px-12 py-16">
+        <section className="border-t border-rule-cream px-5 sm:px-8 lg:px-12 py-16">
           <div className="mx-auto grid max-w-[920px] gap-8 md:grid-cols-2 lg:grid-cols-4">
             <div>
               <div className="font-mono text-[11px] uppercase tracking-widest text-rust">
@@ -188,7 +188,7 @@ export default function AboutPage() {
         </section>
 
         {/* Signoff with logomark */}
-        <section className="px-12 py-16">
+        <section className="px-5 sm:px-8 lg:px-12 py-16">
           <div className="mx-auto flex max-w-[920px] flex-col items-center gap-6 text-center">
             <DOMark size={56} variant="black" className="opacity-30" />
             <p className="m-0 text-[15px] font-semibold">— The Nudo team</p>

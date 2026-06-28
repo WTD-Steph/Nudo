@@ -11,13 +11,13 @@ const ITEMS = [
 
 export function StarterKit() {
   return (
-    <section className="px-12 pb-20">
-      <div className="relative grid items-center gap-12 overflow-hidden rounded-[32px] bg-green p-12 text-cream lg:grid-cols-[1fr_420px] lg:px-12 lg:py-14">
+    <section className="px-5 sm:px-8 lg:px-12 pb-20">
+      <div className="relative grid items-center gap-10 overflow-hidden rounded-[24px] bg-green p-6 text-cream sm:gap-12 sm:rounded-[32px] sm:p-10 lg:grid-cols-[1fr_420px] lg:px-12 lg:py-14">
         <div>
           <span className="mb-5 inline-flex items-center gap-2 self-start rounded-full bg-mustard px-4 py-2 text-[14px] font-bold tracking-wide text-ink">
             ⚡ Most popular for first-timers
           </span>
-          <h2 className="mb-4 text-balance text-[72px] font-bold leading-[0.95] tracking-[-0.035em]">
+          <h2 className="mb-4 text-balance text-[clamp(34px,8.5vw,72px)] font-bold leading-[0.98] tracking-[-0.035em] sm:leading-[0.95]">
             The kit that gets you to{" "}
             <em className="not-italic text-mustard">your first good shot.</em>
           </h2>
