@@ -1,8 +1,17 @@
-import type { NextRequest } from "next/server";
+import { NextResponse, type NextRequest } from "next/server";
 import { updateSession } from "@/lib/supabase/middleware";
 
 export async function middleware(request: NextRequest) {
-  return updateSession(request);
+  // Absolute production safety: if anything anywhere throws, the request
+  // is passed through unchanged. The site stays up; the auth flow may
+  // misbehave for that one request, but we don't 500 the marketing site.
+  try {
+    return await updateSession(request);
+  } catch (e) {
+    // eslint-disable-next-line no-console
+    console.error("[mw-root] passthrough on error", e);
+    return NextResponse.next({ request });
+  }
 }
 
 export const config = {
