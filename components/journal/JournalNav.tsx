@@ -13,6 +13,18 @@ const TABS = [
 export function JournalNav({ email }: { email?: string | null }) {
   const pathname = usePathname();
 
+  // Exactly one active tab: the one whose href is the longest prefix of the
+  // current path. Beans lives *under* the Brews path
+  // (/account/journal/beans ⊂ /account/journal), so a plain startsWith lights
+  // up both — longest-match wins resolves the nesting.
+  const activeHref = TABS.map((t) => t.href)
+    .filter((href) =>
+      href === ROUTES.account
+        ? pathname === href
+        : pathname === href || pathname.startsWith(href + "/"),
+    )
+    .sort((a, b) => b.length - a.length)[0];
+
   return (
     <div className="border-b border-rule-cream bg-cream/95 backdrop-blur">
       <div className="mx-auto flex max-w-[1280px] flex-wrap items-center justify-between gap-x-4 gap-y-2.5 px-5 py-2.5 sm:px-8 sm:py-4 lg:px-12">
@@ -33,9 +45,7 @@ export function JournalNav({ email }: { email?: string | null }) {
         {/* Tabs: own full-width row on phones, inline on ≥ sm */}
         <nav className="order-last -mx-1 flex w-full gap-1.5 overflow-x-auto px-1 sm:order-none sm:mx-0 sm:w-auto sm:px-0">
           {TABS.map((t) => {
-            const active =
-              pathname === t.href ||
-              (t.href !== ROUTES.account && pathname.startsWith(t.href));
+            const active = t.href === activeHref;
             return (
               <Link
                 key={t.href}
