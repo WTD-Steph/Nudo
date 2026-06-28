@@ -1,44 +1,86 @@
-# Supabase setup — Nudo Journal V1
+# Supabase setup — Nudo Journal
 
-## One-time, before building the journal locally
+## Current state (June 2026)
 
-1. **Create the project** at <https://supabase.com/dashboard/projects/new>.
-   - Suggested name: `nudo-lab-prod`
-   - Region: closest to your fulfilment (Singapore) for latency to APAC traffic
-2. **Run the migration**.
-   - Easiest path: open the SQL editor in the dashboard and paste the contents
-     of `supabase/migrations/0001_journal.sql`, then Run.
-   - CLI path (if you have it set up):
-     ```
-     supabase link --project-ref <ref>
-     supabase db push
-     ```
-3. **Grab the API credentials** from Project Settings → API:
-   - **Project URL** → `NEXT_PUBLIC_SUPABASE_URL`
-   - **anon public key** → `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-4. **Local dev** — copy `.env.example` to `.env.local` and paste the two
-   values in.
-5. **Vercel** — add the same two env vars to Project Settings →
-   Environment Variables (Production + Preview).
-6. **Auth → URL Configuration** in the dashboard:
-   - Site URL: `https://www.nudo-lab.com`
-   - Redirect URLs: add `http://localhost:3000/auth/callback`,
-     `https://www.nudo-lab.com/auth/callback`,
-     and (later) any Vercel preview pattern you want allowed.
+- **Project ref**: `kgcfynzmvjzhxkrfttrk`
+- **Site URL**: `https://www.nudo-lab.com`
+- **Redirect allowlist**: `/auth/callback` on prod (www + apex) and localhost
+- **Email delivery**: Resend SMTP via `smtp.resend.com:465`. Sender `Nudo Lab <noreply@nudo-lab.com>`. Region `ap-northeast-1` (Tokyo). Resend domain ID `7a395564-8300-4bf4-b68f-c6829811a997`.
+- **Rate limit**: `rate_limit_email_sent = 100/hr` (raised from default 2/hr via Management API)
+- **Custom mailer templates** stored in the Supabase Auth config — branded "For every first brews" confirmation + "Open your Nudo Journal" magic link. PATCHed via the Management API.
 
-## Email delivery
+## Database schema
 
-For V1 we use Supabase's built-in SMTP. It works but throttles hard
-(2 emails/hour on free tier). Once you hand over a Resend API key
-we'll switch — until then, this is fine for the MVP.
+Table list (`supabase/migrations/0001_journal.sql`):
+
+| Table | Purpose | RLS |
+|---|---|---|
+| `profiles` | extends `auth.users` with `display_name`, `timezone` | `auth.uid() = id` |
+| `beans` | bean inventory: name, roaster, origin, process, roast_date, notes, photo_url | `auth.uid() = user_id` on every op |
+| `brews` | brew log with method, dose, yield, time, grind, temp, rating, would-brew-again | `auth.uid() = user_id` on every op |
+
+Auto-profile trigger fires on `auth.users` insert. Indexes on `(user_id, brewed_at desc)` and `(user_id, bean_id, brewed_at desc)` — the second one drives the "last brew of this bean" pre-fill that powers BrewForm's "what's different?" mustard callout.
+
+## One-time, before building locally
+
+1. **Pull the env vars**. From the Vercel dashboard or:
+   ```bash
+   vercel env pull .env.local
+   ```
+   The required vars are `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`. Copy `.env.example` if you need a template.
+
+2. **The migration is already applied** to the live project. If you bootstrap a new project from scratch, open the SQL editor in the dashboard and paste `supabase/migrations/0001_journal.sql`, then Run.
+
+## Cross-device magic links — important gotcha
+
+The verify endpoints for clicking email links are at:
+
+- `/verify/signup` — confirmation flow (hardcodes `verifyOtp({ type: 'signup' })`)
+- `/verify/magic`  — returning-user magic link (hardcodes `type: 'magiclink'`)
+
+They MUST live **outside the `/auth/*` namespace**. Supabase's mailer template engine silently rewrites query params on any URL path starting with `/auth/` — it strips your `type=signup` value and injects an empty `type=`. Confirmed by isolation testing: `/SENTINEL-PATH?token_hash=…&type=signup` survives untouched; `/auth/callback?…&type=signup` becomes `…&type=`.
+
+So the email-template URLs look like:
+```
+{{ .SiteURL }}/verify/signup?token_hash={{ .TokenHash }}&amp;next=/account
+{{ .SiteURL }}/verify/magic?token_hash={{ .TokenHash }}&amp;next=/account
+```
+
+No `type` query param (it's encoded in the path). Supabase doesn't touch the URL.
+
+The existing `/auth/callback` is kept ONLY for the PKCE same-device `?code=…` flow. New flows should not use it.
+
+## Editing the email templates
+
+Free-tier projects using Supabase's default mailer can't customise templates. Custom SMTP unlocks template editing automatically — that's why we use Resend.
+
+To edit templates, PATCH the Auth config via Management API. See `scripts/apply_templates_*.py` in scratchpad (or write a fresh script). Pattern:
+
+```python
+PATCH https://api.supabase.com/v1/projects/{ref}/config/auth
+Body: {
+  "mailer_subjects_confirmation": "...",
+  "mailer_templates_confirmation_content": "<html>...</html>",
+  "mailer_subjects_magic_link": "...",
+  "mailer_templates_magic_link_content": "<html>...</html>"
+}
+```
+
+**Propagation delay**: PATCH takes ~2-3 minutes before new emails reflect the change. Test immediately after a PATCH and you'll see the previous template — wait, then retry.
+
+**Don't break these constraints**:
+- Keep `{{ .TokenHash }}` in the URL
+- Keep brand tokens (`#0D330E`, `#A3481A`, `#FDF8DE`, `#F1DAAE`, `#1A1A1A`)
+- Keep the `日々` (hibi) kanji in the eyebrow with `lang="ja"`
+- Keep the URL outside `/auth/*`
+- Don't reintroduce "shipped from Singapore" in the footer (founder explicitly cut it 2026-06-28)
 
 ## Regenerating types
 
 After any schema change, regenerate the TypeScript types:
 
-```
-supabase gen types typescript --project-id <ref> > types/database.ts
+```bash
+supabase gen types typescript --project-id kgcfynzmvjzhxkrfttrk > types/database.ts
 ```
 
-If you don't have the CLI installed, the hand-written `types/database.ts`
-will keep working as long as the schema matches.
+If you don't have the CLI installed, the hand-written `types/database.ts` keeps working as long as the schema matches.
